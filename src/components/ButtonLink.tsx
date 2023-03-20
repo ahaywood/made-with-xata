@@ -11,8 +11,15 @@ interface ButtonLinkProps {
 const ButtonLink = ({ borderWidth = "thick", href, isButterflyShowing = true, label }: ButtonLinkProps) => {
   return (
     <Link href={href}>
-      {isButterflyShowing && <Butterfly height={24} width={24} />}
-      {label}
+      <div className={`rainbow-border rounded-full relative
+        ${borderWidth === 'thin' && `p-[2px]`}
+        ${borderWidth === 'thick' && `p-[6px]`}
+        `}>
+        <div className="flex items-center gap-x-2 text-sm font-bold text-white px-10 py-4 bg-black rounded-full">
+          {isButterflyShowing && <Butterfly height={24} width={24} />}
+          {label}
+        </div>
+      </div>
     </Link>
   )
 }

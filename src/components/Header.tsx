@@ -4,7 +4,7 @@ import Logo from './Logo'
 
 const Header = () => {
   return (
-    <div className="page py-8">
+    <div className="max-w-pageWidth mx-auto py-8">
       <div className="flex justify-between text-sm font-semibold">
         <nav>
           <ul className="flex items-center gap-x-12">
@@ -16,10 +16,10 @@ const Header = () => {
             <li><Link href="https://xata.io/chatgpt">AI</Link></li>
           </ul>
         </nav>
-        <nav className="flex items-center gap-x-12 font-semibold">
-          <Link href="https://app.xata.io/signin">Login</Link>
-          <ButtonLink href="https://app.xata.io/signin" label="Start building for free" />
-        </nav>
+        <div className="flex items-center gap-x-12 font-semibold">
+          <div className="header-links"><Link href="https://app.xata.io/signin">Login</Link></div>
+          <ButtonLink href="https://app.xata.io/signin" label="Start building for free" borderWidth="thin" />
+        </div>
       </div>
     </div>
   )
