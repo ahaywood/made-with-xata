@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@200&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-black text-white;
+  }
+
+  svg {
+    @apply fill-current;
+  }
+}
+
+@layer components {
+  nav a {
+    @apply hover:text-selectiveYellow
+  }
+}
+
+@layer utilities {
+  .center {
+    @apply flex items-center justify-center;
+  }
+
+  .page {
+    @apply max-w-pageWidth mx-auto grid gap-x-5;
+  }
+}
