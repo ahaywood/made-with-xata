@@ -14,13 +14,13 @@ const Footer = () => {
       <div className="page pb-20">
         <div className="col-span-10">
           <div className="mb-10"><Xata /></div>
-          <p>
+          <div>
             <div>Xata is a Serverless Data Platform that radically</div>
             <div>simplifies the way developers work with data.</div>
-          </p>
+          </div>
         </div>
         <div>
-          <p className="mb-8"><strong>Product</strong></p>
+          <div className="mb-8"><strong>Product</strong></div>
           <ul className="footer-links">
             <li><Link href="#">Product</Link></li>
             <li><Link href="#">Docs</Link></li>
@@ -28,7 +28,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <p className="mb-8"><strong>Company</strong></p>
+          <div className="mb-8"><strong>Company</strong></div>
           <ul className="footer-links">
             <li><Link href="#">About Us</Link></li>
             <li><Link href="#">Blog</Link></li>
