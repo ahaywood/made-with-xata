@@ -1,4 +1,4 @@
-import { Icon } from "./Icons";
+import { Icon } from "./Icon";
 
 interface TagProps {
   name: string;
