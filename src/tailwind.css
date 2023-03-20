@@ -9,6 +9,14 @@
     @apply font-sans bg-black text-white;
   }
 
+  h1 {
+    @apply font-pageTitle font-extralight text-6xl
+  }
+
+  h2 {
+
+  }
+
   svg {
     @apply fill-current;
   }
