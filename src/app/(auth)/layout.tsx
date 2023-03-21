@@ -1,6 +1,6 @@
-import { Header } from '@/components/Header'
+import { Header } from '@/components/Header/Header'
 import '../globals.css'
-import { Footer } from '@/components/Footer'
+import { Footer } from '@/components/Footer/Footer'
 
 export const metadata = {
   title: 'Login | Made with Xata',

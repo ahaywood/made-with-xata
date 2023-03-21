@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Butterfly } from './Butterfly';
+import { Butterfly } from '../Butterfly';
 
 interface ButtonLinkProps {
   borderWidth?: "thick" | "thin";
@@ -11,7 +11,7 @@ interface ButtonLinkProps {
 const ButtonLink = ({ borderWidth = "thick", href, isButterflyShowing = true, label }: ButtonLinkProps) => {
   return (
     <Link href={href}>
-      <div className={`rainbow-border rounded-full relative
+      <div className={`rainbow-border rounded-full relative inline-block
         ${borderWidth === 'thin' && `p-[2px]`}
         ${borderWidth === 'thick' && `p-[6px]`}
         `}>

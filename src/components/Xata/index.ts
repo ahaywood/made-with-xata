@@ -1,0 +1,1 @@
+export { Xata } from "./Xata";
