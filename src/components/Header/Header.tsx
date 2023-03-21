@@ -9,17 +9,17 @@ const Header = () => {
       <div className="flex justify-between text-sm font-semibold">
         <nav>
           <ul className="flex items-center gap-x-12">
-            <li><Link href="/"><Logo /></Link></li>
-            <li><Link href="https://xata.io/features">Features</Link></li>
-            <li><Link href="https://xata.io/pricing">Pricing</Link></li>
-            <li><Link href="https://xata.io/blog">Blog</Link></li>
-            <li><Link href="https://xata.io/docs/overview">Docs</Link></li>
-            <li><Link href="https://xata.io/chatgpt">AI</Link></li>
+            <li><Link href={CONSTANTS.NAV.HOME} data-testid="homeLink"><Logo /></Link></li>
+            <li><Link href={CONSTANTS.NAV.FEATURES}>Features</Link></li>
+            <li><Link href={CONSTANTS.NAV.PRICING}>Pricing</Link></li>
+            <li><Link href={CONSTANTS.NAV.BLOG}>Blog</Link></li>
+            <li><Link href={CONSTANTS.NAV.DOCS}>Docs</Link></li>
+            <li><Link href={CONSTANTS.NAV.AI}>AI</Link></li>
           </ul>
         </nav>
         <div className="flex items-center gap-x-12 font-semibold">
-          <div className="header-links"><Link href="https://app.xata.io/signin">Login</Link></div>
-          <ButtonLink href="https://app.xata.io/signin" label="Start building for free" borderWidth="thin" />
+          <div className="header-links"><Link href={CONSTANTS.NAV.LOGIN}>Login</Link></div>
+          <ButtonLink href={CONSTANTS.NAV.START_BUILDING} label="Start building for free" borderWidth="thin" />
         </div>
       </div>
     </div>
