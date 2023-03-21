@@ -10,6 +10,7 @@ export const CONSTANTS = Object.freeze({
     CAREERS: 'https://xata.io/careers',
     DOCS: 'https://xata.io/docs/',
     FEATURES: 'https://xata.io/features',
+    HOME: 'https://xata.io/',
     LOGIN: 'http://app.xata.io/',
     PRICING: 'https://xata.io/pricing',
     SUPPORT: 'https://support.xata.io/',
