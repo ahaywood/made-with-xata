@@ -1,0 +1,17 @@
+import { render, screen, waitFor } from '@testing-library/react'
+import { OnGitHub } from './OnGitHub';
+
+describe("OnGitHub", () => {
+  const href = "https://www.google.com"
+
+  it('renders correctly', () => {
+    expect(() => {
+      render(<OnGitHub href={href} />)
+    }).not.toThrow();
+  });
+
+  it('links to the right place', () => {
+    render(<OnGitHub href={href} />)
+    expect(screen.getByRole("link")).toHaveAttribute("href", href)
+  })
+});
