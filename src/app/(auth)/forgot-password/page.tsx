@@ -1,7 +1,5 @@
-const ForgotPassword = () => {
+export default function ForgotPassword() {
   return (
     <div>ForgotPassword</div>
   )
 }
-
-export { ForgotPassword }
