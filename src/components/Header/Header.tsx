@@ -1,6 +1,6 @@
-import { ButtonLink } from './ButtonLink'
+import { ButtonLink } from '../ButtonLink/ButtonLink'
 import Link from 'next/link'
-import Logo from './Logo'
+import {Logo} from '../Logo'
 
 const Header = () => {
   return (

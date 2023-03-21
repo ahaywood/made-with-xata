@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Butterfly } from './Butterfly';
+import { Butterfly } from '../Butterfly';
 
 interface ButtonLinkProps {
   borderWidth?: "thick" | "thin";

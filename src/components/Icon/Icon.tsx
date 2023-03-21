@@ -10,7 +10,7 @@ import { LinkedIn } from "./Linkedin";
 import { Twitter } from "./Twitter";
 import { Upload } from "./Upload";
 
-interface IconProps {
+export interface IconProps {
   height?: number;
   name: string;
   width?: number;

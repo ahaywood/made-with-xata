@@ -1,6 +1,6 @@
 import Link from "next/link"
-import { Xata } from "./Xata"
-import { Icon } from "./Icon"
+import { Xata } from "../Xata/Xata"
+import { Icon } from "../Icon"
 
 const Footer = () => {
 
