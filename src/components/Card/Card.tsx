@@ -1,5 +1,5 @@
-import { ButtonLink } from "./ButtonLink"
-import { OnGitHub } from "./OnGitHub"
+import { ButtonLink } from "../ButtonLink"
+import { OnGitHub } from "../OnGitHub/OnGitHub"
 
 const Card = () => {
   return (
