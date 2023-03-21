@@ -1,38 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Made with Xata
+
+**Made with Xata** is a project gallery that showcases example projects built using the Xata platform. It includes a frontend gallery, with project details,user generated content, user authentication, and an admin interface for managing featured projects.
+
+[This project was built in public.] (https://www.notion.so/ahhacreative/Project-Page-Made-with-Xata-e1c3579bb49e4713bdd7a77b2e6f415a?pvs=4)
 
 ## Getting Started
 
-First, run the development server:
+To get this project up and running, you'll need to:
+
+1. Clone the repo
+2. Run `yarn install` to download and install all the project dependencies.
+3. Duplicate `.env.example`, naming the second file `.env` You'll need to adjust the values in that file with your own API Keys.
+4. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+within the browser of your choice, go to [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Storybook
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+All the components within this project are documented within [Storybook](https://storybook.js.org/).
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To get Storybook up and running:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+yarn storybook
+```
 
-## Learn More
+The Storybook script should automatically open a browser window. But, you can also go to [http://localhost:6006/](http://localhost:6006/)
 
-To learn more about Next.js, take a look at the following resources:
+## Jest and JavaScript Testing Library
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project uses [Jest](https://jestjs.io/) and [JavaScript Testing Library](https://testing-library.com/) for testing. It makes use of the [built-in Next.js Jest configuration and the Rust compiler](https://nextjs.org/docs/testing#jest-and-react-testing-library). (It's fast!)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Xata
 
-## Deploy on Vercel
+On the backend, all the data is being managed through [Xata](https://xata.io/).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<!-- TODO: Add additional documentation around Xata once the project is finalized -->
