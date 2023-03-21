@@ -5,7 +5,7 @@ interface ButterflyProps {
 
 const Butterfly = ({ height = 44, width = 44 }: ButterflyProps) => {
   return (
-    <svg width={width} height={height} viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width={width} height={height} viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" data-testid="butterfly">
       <title>Xata Butterfly Icon</title>
       <path d="M36.6847 43.9354C39.7262 40.8994 41.7626 37.1044 42.3428 33.3837C42.9244 29.6629 42.0032 26.323 39.7812 24.0969L28.3096 35.5424L36.6847 43.9354Z" fill="#06D6A0"/>
       <path d="M6.68929 44C3.64779 40.9654 1.61141 37.169 1.03116 33.4496C0.449539 29.7289 1.37079 26.3876 3.59141 24.1615L15.063 35.607L6.68929 44Z" fill="#FFBE0B"/>
