@@ -1,6 +1,6 @@
 const Logo = () => {
   return (
-    <svg width="138" height="44" viewBox="0 0 138 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="138" height="44" viewBox="0 0 138 44" fill="none" xmlns="http://www.w3.org/2000/svg" data-testid="logo">
       <title>Xata</title>
       <path d="M36.685 43.9354C39.7265 40.8994 41.7629 37.1044 42.3431 33.3836C42.9247 29.6629 42.0035 26.323 39.7815 24.0969L28.3099 35.5424L36.685 43.9354Z" fill="#06D6A0"/>
       <path d="M6.68941 44C3.64791 40.9654 1.61154 37.169 1.03129 33.4496C0.449661 29.7289 1.37091 26.3876 3.59154 24.1615L15.0632 35.607L6.68941 44Z" fill="#FFBE0B"/>

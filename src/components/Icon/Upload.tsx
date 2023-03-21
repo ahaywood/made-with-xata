@@ -5,7 +5,7 @@ interface UploadProps {
 
 const Upload = ({ height = 24, width = 24 }: UploadProps) => {
   return (
-    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width={width} height={height} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" data-testid="uploadIcon">
       <title>Upload</title>
       <path d="M5 10C4.4 10 4 9.6 4 9C4 5.1 7.1 2 11 2C14 2 16.7 4 17.7 6.9C17.8 7.4 17.6 8 17 8.1C16.5 8.3 15.9 8 15.7 7.5C15.1 5.4 13.2 4 11 4C8.2 4 6 6.2 6 9C6 9.6 5.6 10 5 10Z" />
       <path d="M17.9999 18C17.3999 18 16.9999 17.6 16.9999 17C16.9999 16.4 17.3999 16 17.9999 16C20.1999 16 21.9999 14.2 21.9999 12C21.9999 9.8 20.1999 8 17.9999 8C17.6999 8 17.2999 8 16.9999 8.1C16.4999 8.2 15.8999 7.9 15.7999 7.4C15.6999 6.9 15.9999 6.3 16.4999 6.2C16.9999 6.1 17.4999 6 17.9999 6C21.2999 6 23.9999 8.7 23.9999 12C23.9999 15.3 21.2999 18 17.9999 18Z" />
