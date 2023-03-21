@@ -11,7 +11,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        caribbeanGreen: '#00dc9d',
+        montana: '#393939', /* dark gray */
         selectiveYellow: '#ffbb00',
+      },
+      dropShadow: {
+        toggle: '0px 1px 3px rgba(16, 24, 40, 0.4), 0px 1px 2px rgba(16, 24, 40, 0.15)'
       },
       maxWidth: {
         pageWidth: "1240px",

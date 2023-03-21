@@ -1,3 +1,4 @@
+import { useForm } from "react-hook-form";
 import type { Meta, StoryObj } from '@storybook/react';
 import { Toggle } from './Toggle';
 
@@ -11,11 +12,21 @@ const meta: Meta<typeof Toggle> = {
     layout: 'fullscreen',
   },
 };
-
 export default meta;
-type Story = StoryObj<typeof Toggle>;
 
-export const Primary: Story = {
+type Story = StoryObj<typeof Toggle>;
+export const Checked: Story = {
   args: {
+    defaultChecked: false,
+    name: 'yolo',
+    label: 'Yolo',
+  },
+};
+
+export const Unchecked: Story = {
+  args: {
+    defaultChecked: true,
+    name: 'yolo',
+    label: 'Yolo',
   },
 };

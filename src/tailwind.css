@@ -41,6 +41,10 @@
   .legal-links li:last-child:after {
     @apply content-[''];
   }
+
+  input[type=checkbox]:checked + .switch-wrapper {
+    @apply justify-end bg-caribbeanGreen;
+  }
 }
 
 @layer utilities {
