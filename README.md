@@ -37,6 +37,12 @@ The Storybook script should automatically open a browser window. But, you can al
 
 This project uses [Jest](https://jestjs.io/) and [JavaScript Testing Library](https://testing-library.com/) for testing. It makes use of the [built-in Next.js Jest configuration and the Rust compiler](https://nextjs.org/docs/testing#jest-and-react-testing-library). (It's fast!)
 
+To get the test suite up and running:
+
+```bash
+yarn test
+```
+
 ## Xata
 
 On the backend, all the data is being managed through [Xata](https://xata.io/).
