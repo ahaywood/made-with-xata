@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { Xata } from "../Xata/Xata"
 import { Icon } from "../Icon"
+import { CONSTANTS } from "@/utils/Constants"
 
 const Footer = () => {
 
@@ -22,17 +23,17 @@ const Footer = () => {
         <div>
           <div className="mb-8"><strong>Product</strong></div>
           <ul className="footer-links">
-            <li><Link href="#">Product</Link></li>
-            <li><Link href="#">Docs</Link></li>
-            <li><Link href="#">Support</Link></li>
+            <li><Link href={CONSTANTS.NAV.PRICING}>Pricing</Link></li>
+            <li><Link href={CONSTANTS.NAV.DOCS}>Docs</Link></li>
+            <li><Link href={CONSTANTS.NAV.SUPPORT}>Support</Link></li>
           </ul>
         </div>
         <div>
           <div className="mb-8"><strong>Company</strong></div>
           <ul className="footer-links">
-            <li><Link href="#">About Us</Link></li>
-            <li><Link href="#">Blog</Link></li>
-            <li><Link href="#">Careers</Link></li>
+            <li><Link href={CONSTANTS.NAV.ABOUT}>About Us</Link></li>
+            <li><Link href={CONSTANTS.NAV.BLOG}>Blog</Link></li>
+            <li><Link href={CONSTANTS.NAV.CAREERS}>Careers</Link></li>
           </ul>
         </div>
 
@@ -43,9 +44,9 @@ const Footer = () => {
         </div>
         <div className="col-span-6 flex items-center justify-end gap-x-4">
           <ul className="flex legal-links">
-            <li><Link href="#">Cookies</Link></li>
-            <li><Link href="#">Terms</Link></li>
-            <li><Link href="#">Privacy Policy</Link></li>
+            <li><Link href={CONSTANTS.LEGAL.COOKIES}>Cookies</Link></li>
+            <li><Link href={CONSTANTS.LEGAL.TERMS}>Terms</Link></li>
+            <li><Link href={CONSTANTS.LEGAL.PRIVACY_POLICY}>Privacy Policy</Link></li>
           </ul>
           <ul className="flex gap-x-4 items-center">
             <li><Link href="#"><Icon height={32} width={32} name="email" /></Link></li>
