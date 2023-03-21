@@ -12,7 +12,7 @@ export default function Home() {
 
       <div className="page">
         <div className="col-start-4 col-span-6">
-          <h2>We'd love to see what you create, share your own projects with us, in our community!</h2>
+          <h2>We&apos;d love to see what you create, share your own projects with us, in our community!</h2>
           <div><ButtonLink href="#" label="Submit Your Project" /></div>
         </div>
       </div>
