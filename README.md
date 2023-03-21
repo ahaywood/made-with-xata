@@ -2,7 +2,7 @@
 
 **Made with Xata** is a project gallery that showcases example projects built using the Xata platform. It includes a frontend gallery, with project details,user generated content, user authentication, and an admin interface for managing featured projects.
 
-[This project was built in public.] (https://www.notion.so/ahhacreative/Project-Page-Made-with-Xata-e1c3579bb49e4713bdd7a77b2e6f415a?pvs=4)
+[This project was built in public.](https://www.notion.so/ahhacreative/Project-Page-Made-with-Xata-e1c3579bb49e4713bdd7a77b2e6f415a?pvs=4)
 
 ## Getting Started
 
