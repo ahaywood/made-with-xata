@@ -1,8 +1,8 @@
-import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { ProjectRow } from './ProjectRow';
 
-describe("ProjectRow", () => {
+describe('ProjectRow', () => {
   it('renders correctly', () => {
     expect(() => {
       render(
@@ -12,25 +12,27 @@ describe("ProjectRow", () => {
           name="This is it"
           avatar="https://i.pravatar.cc/150?img=66"
           contributor="Amy"
-          handleEdit={() => { }}
-          handleDelete={() => { }}
-        />)
+          handleEdit={() => {}}
+          handleDelete={() => {}}
+        />
+      );
     }).not.toThrow();
   });
 
-  it.skip('handles a click and drag', () => { });
+  it.skip('handles a click and drag', () => {});
 
   it('displays as a featured component', () => {
     render(
       <ProjectRow
-        featured={true}
+        featured
         slug="something"
         name="This is it"
         avatar="https://i.pravatar.cc/150?img=66"
         contributor="Amy"
-        handleEdit={() => { }}
-        handleDelete={() => { }}
-      />)
+        handleEdit={() => {}}
+        handleDelete={() => {}}
+      />
+    );
     expect(screen.getByTestId('checkIcon')).toBeInTheDocument();
   });
 
@@ -42,9 +44,10 @@ describe("ProjectRow", () => {
         name="This is it"
         avatar="https://i.pravatar.cc/150?img=66"
         contributor="Amy"
-        handleEdit={() => { }}
-        handleDelete={() => { }}
-      />)
+        handleEdit={() => {}}
+        handleDelete={() => {}}
+      />
+    );
     expect(screen.queryByTestId('checkIcon')).not.toBeInTheDocument();
   });
 
@@ -56,9 +59,10 @@ describe("ProjectRow", () => {
         name="This is it"
         avatar="https://i.pravatar.cc/150?img=66"
         contributor="Amy"
-        handleEdit={() => { }}
-        handleDelete={() => { }}
-      />)
+        handleEdit={() => {}}
+        handleDelete={() => {}}
+      />
+    );
     expect(screen.getByText('This is it')).toBeInTheDocument();
   });
 
@@ -70,10 +74,14 @@ describe("ProjectRow", () => {
         name="This is it"
         avatar="https://i.pravatar.cc/150?img=66"
         contributor="Amy"
-        handleEdit={() => { }}
-        handleDelete={() => { }}
-      />)
-    expect(screen.getByText('This is it').closest('a')).toHaveAttribute('href', '/something');
+        handleEdit={() => {}}
+        handleDelete={() => {}}
+      />
+    );
+    expect(screen.getByText('This is it').closest('a')).toHaveAttribute(
+      'href',
+      '/something'
+    );
   });
 
   it('displays the contributor', () => {
@@ -84,9 +92,10 @@ describe("ProjectRow", () => {
         name="This is it"
         avatar="https://i.pravatar.cc/150?img=66"
         contributor="Amy"
-        handleEdit={() => { }}
-        handleDelete={() => { }}
-      />)
+        handleEdit={() => {}}
+        handleDelete={() => {}}
+      />
+    );
     expect(screen.getByText('Amy')).toBeInTheDocument();
   });
 
@@ -99,18 +108,19 @@ describe("ProjectRow", () => {
         avatar="https://i.pravatar.cc/150?img=66"
         contributor="Amy"
         tags={[
-          { id: '1', name: "Gatsby" },
-          { id: '2', name: "Tailwind" },
+          { id: '1', name: 'Gatsby' },
+          { id: '2', name: 'Tailwind' },
         ]}
-        handleEdit={() => { }}
-        handleDelete={() => { }}
-      />)
+        handleEdit={() => {}}
+        handleDelete={() => {}}
+      />
+    );
     expect(screen.getByText('Gatsby')).toBeInTheDocument();
     expect(screen.getByText('Tailwind')).toBeInTheDocument();
   });
 
   it('handles the edit button click', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup();
     const handleEdit = jest.fn();
     render(
       <ProjectRow
@@ -120,14 +130,15 @@ describe("ProjectRow", () => {
         avatar="https://i.pravatar.cc/150?img=66"
         contributor="Amy"
         handleEdit={handleEdit}
-        handleDelete={() => { }}
-      />)
-    await user.click(screen.getByTestId('editProject'))
+        handleDelete={() => {}}
+      />
+    );
+    await user.click(screen.getByTestId('editProject'));
     expect(handleEdit).toHaveBeenCalled();
   });
 
   it('handles the delete button click', async () => {
-    const user = userEvent.setup()
+    const user = userEvent.setup();
     const handleDelete = jest.fn();
     render(
       <ProjectRow
@@ -136,14 +147,15 @@ describe("ProjectRow", () => {
         name="This is it"
         avatar="https://i.pravatar.cc/150?img=66"
         contributor="Amy"
-        handleEdit={() => { }}
+        handleEdit={() => {}}
         handleDelete={handleDelete}
-      />)
-    await user.click(screen.getByTestId('deleteProject'))
+      />
+    );
+    await user.click(screen.getByTestId('deleteProject'));
     expect(handleDelete).toHaveBeenCalled();
   });
 
-  it('is approved', async () => {
+  it('is approved', () => {
     render(
       <ProjectRow
         featured={false}
@@ -151,16 +163,17 @@ describe("ProjectRow", () => {
         name="This is it"
         avatar="https://i.pravatar.cc/150?img=66"
         contributor="Amy"
-        handleEdit={() => { }}
-        handleDelete={() => { }}
-      />)
+        handleEdit={() => {}}
+        handleDelete={() => {}}
+      />
+    );
     expect(screen.getByText('This is it')).not.toHaveClass('italic');
     expect(screen.getByText('This is it')).not.toHaveClass('text-gray');
     expect(screen.getByText('Amy')).not.toHaveClass('italic');
     expect(screen.getByText('Amy')).not.toHaveClass('text-gray');
   });
 
-  it('is not approved', async () => {
+  it('is not approved', () => {
     render(
       <ProjectRow
         featured={false}
@@ -168,13 +181,18 @@ describe("ProjectRow", () => {
         name="This is it"
         avatar="https://i.pravatar.cc/150?img=66"
         contributor="Amy"
-        handleEdit={() => { }}
-        handleDelete={() => { }}
+        handleEdit={() => {}}
+        handleDelete={() => {}}
         isApproved={false}
-      />)
-    expect(screen.getByText('This is it')).toHaveClass('italic', {exact: false});
-    expect(screen.getByText('This is it')).toHaveClass('text-gray', {exact: false});
-    expect(screen.getByText('Amy')).toHaveClass('italic', {exact: false});
-    expect(screen.getByText('Amy')).toHaveClass('text-gray', {exact: false});
+      />
+    );
+    expect(screen.getByText('This is it')).toHaveClass('italic', {
+      exact: false,
+    });
+    expect(screen.getByText('This is it')).toHaveClass('text-gray', {
+      exact: false,
+    });
+    expect(screen.getByText('Amy')).toHaveClass('italic', { exact: false });
+    expect(screen.getByText('Amy')).toHaveClass('text-gray', { exact: false });
   });
 });

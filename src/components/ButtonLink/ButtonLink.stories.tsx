@@ -18,26 +18,26 @@ type Story = StoryObj<typeof ButtonLink>;
 export const ThickBorder: Story = {
   args: {
     borderWidth: 'thick',
-    href: "#",
+    href: '#',
     isButterflyShowing: true,
-    label: "Button Label"
+    label: 'Button Label',
   },
 };
 
 export const ThinBorder: Story = {
   args: {
     borderWidth: 'thin',
-    href: "#",
+    href: '#',
     isButterflyShowing: true,
-    label: "Button Label"
+    label: 'Button Label',
   },
 };
 
 export const NoButterfly: Story = {
   args: {
     borderWidth: 'thin',
-    href: "#",
+    href: '#',
     isButterflyShowing: false,
-    label: "Button Label"
+    label: 'Button Label',
   },
 };

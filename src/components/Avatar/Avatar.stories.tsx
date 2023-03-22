@@ -25,6 +25,6 @@ export const Primary: Story = {
 export const NoImage: Story = {
   args: {
     alt: 'Some Alt Text',
-    avatarColor: 'malachite'
+    avatarColor: 'malachite',
   },
 };

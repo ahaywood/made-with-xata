@@ -2,12 +2,8 @@ interface ProjectGridProps {
   // props here
 }
 
-const ProjectGrid = ({ /* props */ }: ProjectGridProps) => {
-  return (
-    <div>
-      ProjectGrid
-    </div>
-  )
-}
+const ProjectGrid = ({}: /* props */ ProjectGridProps) => (
+  <div>ProjectGrid</div>
+);
 
-export { ProjectGrid }
+export { ProjectGrid };

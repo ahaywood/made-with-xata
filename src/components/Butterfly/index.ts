@@ -1,1 +1,1 @@
-export { Butterfly } from "./Butterfly"
+export { Butterfly } from './Butterfly';

@@ -1,1 +1,1 @@
-export { Xata } from "./Xata";
+export { Xata } from './Xata';

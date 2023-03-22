@@ -1,1 +1,1 @@
-export { ProjectRow } from "./ProjectRow";
+export { ProjectRow } from './ProjectRow';

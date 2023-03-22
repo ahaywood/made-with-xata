@@ -18,8 +18,8 @@ export const CONSTANTS = Object.freeze({
     XATA: 'https://xata.io',
   },
   LEGAL: {
-    COOKIES: "https://xata.io/#",
-    TERMS: "https://xata.io/terms-of-use",
-    PRIVACY_POLICY: "https://xata.io/privacy",
-  }
-})
+    COOKIES: 'https://xata.io/#',
+    TERMS: 'https://xata.io/terms-of-use',
+    PRIVACY_POLICY: 'https://xata.io/privacy',
+  },
+});

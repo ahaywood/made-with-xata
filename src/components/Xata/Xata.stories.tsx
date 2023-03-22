@@ -16,6 +16,5 @@ export default meta;
 type Story = StoryObj<typeof Xata>;
 
 export const Primary: Story = {
-  args: {
-  },
+  args: {},
 };

@@ -1,19 +1,27 @@
-import { ButtonLink } from '@/components/ButtonLink'
-import { Card } from '@/components/Card/Card'
-import React from 'react'
+import { ButtonLink } from '@/components/ButtonLink';
+import { Card } from '@/components/Card/Card';
+import React from 'react';
 
 export default function Home() {
   return (
     <div>
       <h1>Made with Xata</h1>
-      <h2>Explore the possibilities by checking out some amazing apps built with Xata.</h2>
+      <h2>
+        Explore the possibilities by checking out some amazing apps built with
+        Xata.
+      </h2>
 
       {/* slider */}
 
       <div className="page">
         <div className="col-start-4 col-span-6">
-          <h2>We&apos;d love to see what you create, share your own projects with us, in our community!</h2>
-          <div><ButtonLink href="#" label="Submit Your Project" /></div>
+          <h2>
+            We&apos;d love to see what you create, share your own projects with
+            us, in our community!
+          </h2>
+          <div>
+            <ButtonLink href="#" label="Submit Your Project" />
+          </div>
         </div>
       </div>
 
@@ -23,8 +31,6 @@ export default function Home() {
         <Card />
         <Card />
       </div>
-
-
     </div>
-  )
+  );
 }

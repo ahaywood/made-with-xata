@@ -1,11 +1,10 @@
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react';
 import { ProjectGrid } from './ProjectGrid';
 
-describe("ProjectGrid", () => {
+describe('ProjectGrid', () => {
   it('renders correctly', () => {
     expect(() => {
-      render(
-        <ProjectGrid />)
+      render(<ProjectGrid />);
     }).not.toThrow();
   });
 });

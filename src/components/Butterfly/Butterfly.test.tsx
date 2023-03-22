@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react';
 import { Butterfly } from './Butterfly';
 
-describe("Butterfly", () => {
+describe('Butterfly', () => {
   it('renders correctly', () => {
     expect(() => {
-      render(<Butterfly />)
+      render(<Butterfly />);
     }).not.toThrow();
   });
 

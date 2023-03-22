@@ -1,7 +1,3 @@
-const IndividualItem = () => {
-  return (
-    <div>IndividualItem</div>
-  )
-}
+const IndividualItem = () => <div>IndividualItem</div>;
 
-export default IndividualItem
+export default IndividualItem;

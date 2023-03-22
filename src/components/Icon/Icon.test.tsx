@@ -1,166 +1,166 @@
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen } from '@testing-library/react';
 import { Icon } from './Icon';
 
-describe("Icon", () => {
+describe('Icon', () => {
   it('renders correctly', () => {
-      expect(() => {
-        render(<Icon name="check" />)
-      }).not.toThrow();
+    expect(() => {
+      render(<Icon name="check" />);
+    }).not.toThrow();
   });
 
-  describe("Check Icon", () => {
+  describe('Check Icon', () => {
     it('rendering the check icon', () => {
-      render(<Icon name="check" />)
+      render(<Icon name="check" />);
       expect(screen.getByTestId('checkIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="check" />)
+        render(<Icon name="check" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 
-  describe("Close Icon", () => {
+  describe('Close Icon', () => {
     it('rendering the close icon', () => {
-      render(<Icon name="close" />)
+      render(<Icon name="close" />);
       expect(screen.getByTestId('closeIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="close" />)
+        render(<Icon name="close" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 
-  describe("Delete Icon", () => {
+  describe('Delete Icon', () => {
     it('rendering the delete icon', () => {
-      render(<Icon name="delete" />)
+      render(<Icon name="delete" />);
       expect(screen.getByTestId('deleteIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="delete" />)
+        render(<Icon name="delete" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 
-  describe("Discord Icon", () => {
+  describe('Discord Icon', () => {
     it('rendering the discord icon', () => {
-      render(<Icon name="discord" />)
+      render(<Icon name="discord" />);
       expect(screen.getByTestId('discordIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="discord" />)
+        render(<Icon name="discord" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 
-  describe("Dots Icon", () => {
+  describe('Dots Icon', () => {
     it('rendering the dots icon', () => {
-      render(<Icon name="dots" />)
+      render(<Icon name="dots" />);
       expect(screen.getByTestId('dotsIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="dots" />)
+        render(<Icon name="dots" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 
-  describe("Edit Icon", () => {
+  describe('Edit Icon', () => {
     it('rendering the edit icon', () => {
-      render(<Icon name="edit" />)
+      render(<Icon name="edit" />);
       expect(screen.getByTestId('editIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="edit" />)
+        render(<Icon name="edit" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 
-  describe("Email Icon", () => {
+  describe('Email Icon', () => {
     it('rendering the email icon', () => {
-      render(<Icon name="email" />)
+      render(<Icon name="email" />);
       expect(screen.getByTestId('emailIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="email" />)
+        render(<Icon name="email" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 
-  describe("GitHub Icon", () => {
+  describe('GitHub Icon', () => {
     it('rendering the github icon', () => {
-      render(<Icon name="github" />)
+      render(<Icon name="github" />);
       expect(screen.getByTestId('githubIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="github" />)
+        render(<Icon name="github" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 
-  describe("LinkedIn Icon", () => {
+  describe('LinkedIn Icon', () => {
     it('rendering the linkedin icon', () => {
-      render(<Icon name="linkedin" />)
+      render(<Icon name="linkedin" />);
       expect(screen.getByTestId('linkedinIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="linkedin" />)
+        render(<Icon name="linkedin" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 
-  describe("Twitter Icon", () => {
+  describe('Twitter Icon', () => {
     it('rendering the twitter icon', () => {
-      render(<Icon name="twitter" />)
+      render(<Icon name="twitter" />);
       expect(screen.getByTestId('twitterIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="twitter" />)
+        render(<Icon name="twitter" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 
-  describe("Upload Icon", () => {
+  describe('Upload Icon', () => {
     it('rendering the upload icon', () => {
-      render(<Icon name="upload" />)
+      render(<Icon name="upload" />);
       expect(screen.getByTestId('uploadIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="upload" />)
+        render(<Icon name="upload" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 
-  describe("Vertical Dots Icon", () => {
+  describe('Vertical Dots Icon', () => {
     it('rendering the vertical dots icon', () => {
-      render(<Icon name="verticalDots" />)
+      render(<Icon name="verticalDots" />);
       expect(screen.getByTestId('verticalDotsIcon')).toBeInTheDocument();
     });
 
     it('renders correctly', () => {
       expect(() => {
-        render(<Icon name="verticalDots" />)
+        render(<Icon name="verticalDots" />);
       }).toMatchSnapshot();
     });
-  })
+  });
 });

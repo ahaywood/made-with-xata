@@ -1,5 +1,3 @@
 export default function ForgotPassword() {
-  return (
-    <div>ForgotPassword</div>
-  )
+  return <div>ForgotPassword</div>;
 }

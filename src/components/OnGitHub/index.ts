@@ -1,1 +1,1 @@
-export { OnGitHub } from "./OnGitHub";
+export { OnGitHub } from './OnGitHub';

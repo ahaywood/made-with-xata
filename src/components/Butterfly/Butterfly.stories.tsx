@@ -17,6 +17,6 @@ type Story = StoryObj<typeof Butterfly>;
 export const Primary: Story = {
   args: {
     height: 44,
-    width: 44
+    width: 44,
   },
 };

@@ -1,10 +1,10 @@
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react';
 import { Logo } from './Logo';
 
-describe("Logo", () => {
+describe('Logo', () => {
   it('renders correctly', () => {
     expect(() => {
-      render(<Logo />)
+      render(<Logo />);
     }).not.toThrow();
   });
 

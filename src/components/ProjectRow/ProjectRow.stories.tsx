@@ -20,14 +20,14 @@ export const Primary: Story = {
     featured: true,
     slug: 'some-slug',
     name: 'Prune Your Follows',
-    avatar: "https://i.pravatar.cc/150?img=66",
-    contributor: "Lilly Labs",
+    avatar: 'https://i.pravatar.cc/150?img=66',
+    contributor: 'Lilly Labs',
     tags: [
-      { id: '1', name: "Gatsby" },
-      { id: '2', name: "Tailwind" },
+      { id: '1', name: 'Gatsby' },
+      { id: '2', name: 'Tailwind' },
     ],
     handleEdit: () => {},
-    handleDelete: () => {}
+    handleDelete: () => {},
   },
 };
 
@@ -36,14 +36,14 @@ export const NotFeatured: Story = {
     featured: false,
     slug: 'some-slug',
     name: 'Prune Your Follows',
-    avatar: "https://i.pravatar.cc/150?img=66",
-    contributor: "Lilly Labs",
+    avatar: 'https://i.pravatar.cc/150?img=66',
+    contributor: 'Lilly Labs',
     tags: [
-      { id: '1', name: "Gatsby" },
-      { id: '2', name: "Tailwind" },
+      { id: '1', name: 'Gatsby' },
+      { id: '2', name: 'Tailwind' },
     ],
     handleEdit: () => {},
-    handleDelete: () => {}
+    handleDelete: () => {},
   },
 };
 
@@ -52,10 +52,10 @@ export const NoTags: Story = {
     featured: false,
     slug: 'some-slug',
     name: 'Prune Your Follows',
-    avatar: "https://i.pravatar.cc/150?img=66",
-    contributor: "Lilly Labs",
+    avatar: 'https://i.pravatar.cc/150?img=66',
+    contributor: 'Lilly Labs',
     handleEdit: () => {},
-    handleDelete: () => {}
+    handleDelete: () => {},
   },
 };
 
@@ -64,16 +64,16 @@ export const ExtraTags: Story = {
     featured: false,
     slug: 'some-slug',
     name: 'Prune Your Follows',
-    avatar: "https://i.pravatar.cc/150?img=66",
-    contributor: "Lilly Labs",
+    avatar: 'https://i.pravatar.cc/150?img=66',
+    contributor: 'Lilly Labs',
     tags: [
-      { id: '1', name: "Gatsby" },
-      { id: '2', name: "Tailwind" },
-      { id: '3', name: "Next.js" },
-      { id: '3', name: "Remix" },
+      { id: '1', name: 'Gatsby' },
+      { id: '2', name: 'Tailwind' },
+      { id: '3', name: 'Next.js' },
+      { id: '3', name: 'Remix' },
     ],
     handleEdit: () => {},
-    handleDelete: () => {}
+    handleDelete: () => {},
   },
 };
 
@@ -82,16 +82,16 @@ export const Unapproved: Story = {
     featured: false,
     slug: 'some-slug',
     name: 'Prune Your Follows',
-    avatar: "https://i.pravatar.cc/150?img=66",
-    contributor: "Lilly Labs",
+    avatar: 'https://i.pravatar.cc/150?img=66',
+    contributor: 'Lilly Labs',
     isApproved: false,
     tags: [
-      { id: '1', name: "Gatsby" },
-      { id: '2', name: "Tailwind" },
-      { id: '3', name: "Next.js" },
-      { id: '3', name: "Remix" },
+      { id: '1', name: 'Gatsby' },
+      { id: '2', name: 'Tailwind' },
+      { id: '3', name: 'Next.js' },
+      { id: '3', name: 'Remix' },
     ],
     handleEdit: () => {},
-    handleDelete: () => {}
+    handleDelete: () => {},
   },
 };

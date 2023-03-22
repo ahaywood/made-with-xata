@@ -1,14 +1,13 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react';
 import { Avatar } from './Avatar';
 
-describe("Avatar", () => {
-  const alt = "Some Alt Text"
-  const src = "https://i.pravatar.cc/150?img=66"
+describe('Avatar', () => {
+  const alt = 'Some Alt Text';
+  const src = 'https://i.pravatar.cc/150?img=66';
 
   it('renders correctly', () => {
     expect(() => {
-      render(
-        <Avatar alt={alt} src={src} />)
+      render(<Avatar alt={alt} src={src} />);
     }).not.toThrow();
   });
 
@@ -16,10 +15,10 @@ describe("Avatar", () => {
     render(<Avatar alt={alt} src={src} size={48} />);
     expect(screen.getByRole('img')).toHaveAttribute('height', '48');
     expect(screen.getByRole('img')).toHaveAttribute('width', '48');
-  })
+  });
 
   it('renders the first letter when the source is not provided', () => {
     render(<Avatar alt={alt} />);
-    expect(screen.getByText("S")).toBeInTheDocument();
+    expect(screen.getByText('S')).toBeInTheDocument();
   });
 });

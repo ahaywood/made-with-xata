@@ -17,60 +17,60 @@ type Story = StoryObj<typeof Icon>;
 
 export const Check: Story = {
   args: {
-    name: 'Check'
+    name: 'Check',
   },
 };
 
 export const Close: Story = {
   args: {
-    name: 'Close'
+    name: 'Close',
   },
 };
 
 export const Delete: Story = {
   args: {
-    name: 'Delete'
+    name: 'Delete',
   },
 };
 
 export const Dots: Story = {
   args: {
-    name: 'Dots'
+    name: 'Dots',
   },
 };
 
 export const Edit: Story = {
   args: {
-    name: 'Edit'
+    name: 'Edit',
   },
 };
 
 export const Email: Story = {
   args: {
-    name: 'Email'
+    name: 'Email',
   },
 };
 
 export const Github: Story = {
   args: {
-    name: 'Github'
+    name: 'Github',
   },
 };
 
 export const LinkedIn: Story = {
   args: {
-    name: 'LinkedIn'
+    name: 'LinkedIn',
   },
 };
 
 export const Upload: Story = {
   args: {
-    name: 'Upload'
+    name: 'Upload',
   },
 };
 
 export const VerticalDots: Story = {
   args: {
-    name: 'VerticalDots'
+    name: 'VerticalDots',
   },
 };

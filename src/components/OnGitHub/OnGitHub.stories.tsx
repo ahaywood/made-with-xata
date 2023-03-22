@@ -17,6 +17,6 @@ type Story = StoryObj<typeof OnGitHub>;
 
 export const Primary: Story = {
   args: {
-    href: "#"
+    href: '#',
   },
 };

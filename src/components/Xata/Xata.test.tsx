@@ -1,14 +1,14 @@
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react';
 import { Xata } from './Xata';
 
-describe("Xata", () => {
+describe('Xata', () => {
   it('renders correctly', () => {
     expect(() => {
-      render(<Xata />)
+      render(<Xata />);
     }).not.toThrow();
   });
 
   it('matches the snapshot', () => {
     expect(render(<Xata />)).toMatchSnapshot();
-  })
+  });
 });
