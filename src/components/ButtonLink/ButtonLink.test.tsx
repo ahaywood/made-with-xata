@@ -44,4 +44,24 @@ describe('ButtonLink', () => {
     render(<ButtonLink href={href} label={label} isButterflyShowing={false} />);
     expect(screen.queryByTestId('butterfly')).not.toBeInTheDocument();
   });
+
+  it('has a normal height', () => {
+    render(<ButtonLink href={href} label={label} />);
+    expect(screen.getByText(label)).toHaveClass('py-4', { exact: false });
+  });
+
+  it('has a normal width', () => {
+    render(<ButtonLink href={href} label={label} />);
+    expect(screen.getByText(label)).toHaveClass('px-10', { exact: false });
+  });
+
+  it('is short in height', () => {
+    render(<ButtonLink href={href} label={label} height="short" />);
+    expect(screen.getByText(label)).toHaveClass('py-2', { exact: false });
+  });
+
+  it('is short in width', () => {
+    render(<ButtonLink href={href} label={label} width="short" />);
+    expect(screen.getByText(label)).toHaveClass('px-7', { exact: false });
+  });
 });

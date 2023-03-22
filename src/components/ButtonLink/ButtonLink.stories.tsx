@@ -33,6 +33,26 @@ export const ThinBorder: Story = {
   },
 };
 
+export const ShortHeight: Story = {
+  args: {
+    borderWidth: 'thin',
+    href: '#',
+    isButterflyShowing: true,
+    label: 'Button Label',
+    height: 'short',
+  },
+};
+
+export const ShortWidth: Story = {
+  args: {
+    borderWidth: 'thin',
+    href: '#',
+    isButterflyShowing: true,
+    label: 'Button Label',
+    width: 'short',
+  },
+};
+
 export const NoButterfly: Story = {
   args: {
     borderWidth: 'thin',
