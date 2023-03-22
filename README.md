@@ -43,6 +43,21 @@ To get the test suite up and running:
 yarn test
 ```
 
+## Plop
+
+You can use PlopJS to stub out a folder within the `src/components` directory by running:
+
+```bash
+yarn plop component
+```
+
+The script will prompt you for the name of the component. Then, it will generate a folder with the component's name and four files inside:
+
+1. Component file
+1. Storybook File
+1. Test file
+1. Barrel file (index.ts file that makes importing components easier)
+
 ## Xata
 
 On the backend, all the data is being managed through [Xata](https://xata.io/).
