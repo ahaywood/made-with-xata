@@ -16,5 +16,11 @@ export default meta;
 type Story = StoryObj<typeof Header>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    user: {
+      name: 'John Doe',
+      avatar: 'https://i.pravatar.cc/300',
+      avatarColor: 'alienArmpit',
+    },
+  },
 };
