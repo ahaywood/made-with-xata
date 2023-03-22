@@ -49,10 +49,10 @@ const Footer = () => {
             <li><Link href={CONSTANTS.LEGAL.PRIVACY_POLICY}>Privacy Policy</Link></li>
           </ul>
           <ul className="flex gap-x-4 items-center">
-            <li><Link href="#"><Icon height={32} width={32} name="email" /></Link></li>
-            <li><Link href="#"><Icon height={32} width={32} name="twitter" /></Link></li>
-            <li><Link href="#"><Icon height={32} width={32} name="discord" /></Link></li>
-            <li><Link href="#"><Icon height={32} width={32} name="linkedin" /></Link></li>
+            <li><Link href={CONSTANTS.EMAIL} data-testid="footerEmail"><Icon height={32} width={32} name="email" /></Link></li>
+            <li><Link href={CONSTANTS.TWITTER} data-testid="footerTwitter"><Icon height={32} width={32} name="twitter" /></Link></li>
+            <li><Link href={CONSTANTS.DISCORD} data-testid="footerDiscord"><Icon height={32} width={32} name="discord" /></Link></li>
+            <li><Link href={CONSTANTS.LINKEDIN} data-testid="footerLinkedIn"><Icon height={32} width={32} name="linkedin" /></Link></li>
           </ul>
         </div>
       </div>
