@@ -84,4 +84,8 @@
   .link-hover {
     @apply hover:opacity-70 transition-opacity duration-300 ease-in-out;
   }
+
+  .page-padding-right {
+    padding-right: calc((100vw-1240px)/2)
+  }
 }

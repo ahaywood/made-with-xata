@@ -34,6 +34,7 @@ module.exports = {
         fluorescentPink: '#f8149a',
         folly: '#ff005d',
         gray: '#818181',
+        eerieBlack: '#181818',
       },
       dropShadow: {
         toggle:
