@@ -30,7 +30,7 @@ const SlideOutPanel = ({
     <AnimatePresence>
       {isShowing && (
         <motion.div
-          className="p-24 w-[70vw] h-screen fixed right-0 page-padding-right bg-eerieBlack z-90"
+          className="p-24 w-[70vw] h-screen fixed right-0 page-padding-right bg-eerieBlack z-slideOutPanel"
           data-testid="slide-out-panel"
           initial="hidden"
           animate="visible"

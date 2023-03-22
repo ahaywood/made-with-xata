@@ -15,10 +15,16 @@ const meta: Meta<typeof SlideOutPanel> = {
 export default meta;
 type Story = StoryObj<typeof SlideOutPanel>;
 
-export const Primary: Story = {
+export const Hidden: Story = {
   args: {
     children: <div>Slide out panel content</div>,
-    handleClick: () => {},
+    defaultIsShowing: false,
+  },
+};
+
+export const Showing: Story = {
+  args: {
+    children: <div>Slide out panel content</div>,
     defaultIsShowing: true,
   },
 };

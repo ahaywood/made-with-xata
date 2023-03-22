@@ -49,6 +49,14 @@ module.exports = {
       maxWidth: {
         pageWidth: '1240px',
       },
+      zIndex: {
+        slideOutPanel: '9999',
+        accountBar: '8000',
+        stickyTableHeader: '20',
+        stickyTableContents: '15',
+        rainbowButton: '10',
+        rainbowButtonGlow: '9',
+      },
     },
     fontFamily: {
       sans: ['Inter', 'sans-serif'],

@@ -74,11 +74,10 @@
   }
 
   .rainbow-border:hover:before {
-    @apply absolute inset-0;
+    @apply absolute inset-0 z-rainbowButtonGlow;
     background: linear-gradient(90deg, #F4BB44 2.14%, #E0367C 32.72%, #6762D2 69.42%, #6ED3FA 99.49%);
     content: '';
     filter: blur(20px);
-    z-index: -1;
   }
 
   .link-hover {

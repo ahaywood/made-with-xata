@@ -17,7 +17,7 @@ const ProjectGrid = ({ projects, isApproved = true }: ProjectGridProps) => {
   return (
     <div className="max-w-pageWidth mx-auto">
       {isApproved ? (
-        <div className="admin-gallery-table text-sm pb-3 border-bunker border-b-2 sticky pt-3 top-0 bg-black z-10">
+        <div className="admin-gallery-table text-sm pb-3 border-bunker border-b-2 sticky pt-3 top-0 bg-black z-stickyTableHeader">
           <div>Featured?</div>
           <div>Project</div>
           <div>Contributor</div>
@@ -33,7 +33,7 @@ const ProjectGrid = ({ projects, isApproved = true }: ProjectGridProps) => {
       )}
 
       {/* table rows */}
-      <div className="relative z-0">
+      <div className="relative z-stickyTableContents">
         {projects.map((project) => (
           <ProjectRow
             key={project.id}
