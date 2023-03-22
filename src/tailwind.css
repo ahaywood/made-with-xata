@@ -49,6 +49,14 @@
   .admin-gallery-table {
     @apply grid gap-x-adminGalleryTable grid-cols-adminGalleryTable;
   }
+
+  .drag-drop-handle {
+    @apply hidden;
+  }
+
+  .project-row:hover .drag-drop-handle {
+    @apply block;
+  }
 }
 
 @layer utilities {

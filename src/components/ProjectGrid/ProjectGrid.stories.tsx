@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ProjectGrid } from './ProjectGrid';
+import { projects } from './ProjectGrid.mocks';
 
 const meta: Meta<typeof ProjectGrid> = {
   title: 'Shared/ProjectGrid',
@@ -17,6 +18,6 @@ type Story = StoryObj<typeof ProjectGrid>;
 
 export const Primary: Story = {
   args: {
-    // args here
+    projects: projects as Project[],
   },
 };
