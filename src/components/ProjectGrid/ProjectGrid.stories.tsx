@@ -16,8 +16,15 @@ const meta: Meta<typeof ProjectGrid> = {
 export default meta;
 type Story = StoryObj<typeof ProjectGrid>;
 
-export const Primary: Story = {
+export const Approved: Story = {
   args: {
     projects: projects as Project[],
+  },
+};
+
+export const Unapproved: Story = {
+  args: {
+    projects: projects as Project[],
+    isApproved: false,
   },
 };
