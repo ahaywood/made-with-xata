@@ -68,3 +68,9 @@ export const Upload: Story = {
     name: 'Upload'
   },
 };
+
+export const VerticalDots: Story = {
+  args: {
+    name: 'VerticalDots'
+  },
+};

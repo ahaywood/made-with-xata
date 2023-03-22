@@ -17,4 +17,9 @@ describe("Avatar", () => {
     expect(screen.getByRole('img')).toHaveAttribute('height', '48');
     expect(screen.getByRole('img')).toHaveAttribute('width', '48');
   })
+
+  it('renders the first letter when the source is not provided', () => {
+    render(<Avatar alt={alt} />);
+    expect(screen.getByText("S")).toBeInTheDocument();
+  });
 });

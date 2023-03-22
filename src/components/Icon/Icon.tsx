@@ -9,6 +9,7 @@ import { GitHub } from "./GitHub";
 import { LinkedIn } from "./Linkedin";
 import { Twitter } from "./Twitter";
 import { Upload } from "./Upload";
+import { VerticalDots } from "./VerticalDots";
 
 export interface IconProps {
   height?: number;
@@ -40,6 +41,8 @@ const Icon = ({ height = 24, name, width = 24 }: IconProps) => {
       return <Twitter height={height} width={width} />
     case "upload":
       return <Upload height={height} width={width} />
+    case "verticaldots":
+      return <VerticalDots height={height} width={width} />
     default:
       return <div />
   }

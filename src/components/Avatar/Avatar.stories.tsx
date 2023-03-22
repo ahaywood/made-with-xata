@@ -21,3 +21,10 @@ export const Primary: Story = {
     src: 'https://i.pravatar.cc/150?img=66',
   },
 };
+
+export const NoImage: Story = {
+  args: {
+    alt: 'Some Alt Text',
+    avatarColor: 'malachite'
+  },
+};

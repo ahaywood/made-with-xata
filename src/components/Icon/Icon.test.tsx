@@ -150,4 +150,17 @@ describe("Icon", () => {
       }).toMatchSnapshot();
     });
   })
+
+  describe("Vertical Dots Icon", () => {
+    it('rendering the vertical dots icon', () => {
+      render(<Icon name="verticalDots" />)
+      expect(screen.getByTestId('verticalDotsIcon')).toBeInTheDocument();
+    });
+
+    it('renders correctly', () => {
+      expect(() => {
+        render(<Icon name="verticalDots" />)
+      }).toMatchSnapshot();
+    });
+  })
 });

@@ -45,6 +45,10 @@
   input[type=checkbox]:checked + .switch-wrapper {
     @apply justify-end bg-caribbeanGreen;
   }
+
+  .admin-gallery-table {
+    @apply grid gap-x-adminGalleryTable grid-cols-adminGalleryTable;
+  }
 }
 
 @layer utilities {

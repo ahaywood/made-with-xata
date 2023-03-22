@@ -8,6 +8,8 @@
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "cSpell.words": [
     "autodocs",
+    "munsell",
+    "verticaldots",
     "Xata",
     "Xatabase"
   ]
