@@ -33,6 +33,7 @@ module.exports = {
         phlox: '#e612f1',
         fluorescentPink: '#f8149a',
         folly: '#ff005d',
+        gray: '#818181'
       },
       dropShadow: {
         toggle: '0px 1px 3px rgba(16, 24, 40, 0.4), 0px 1px 2px rgba(16, 24, 40, 0.15)'

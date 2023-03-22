@@ -76,3 +76,22 @@ export const ExtraTags: Story = {
     handleDelete: () => {}
   },
 };
+
+export const Unapproved: Story = {
+  args: {
+    featured: false,
+    slug: 'some-slug',
+    name: 'Prune Your Follows',
+    avatar: "https://i.pravatar.cc/150?img=66",
+    contributor: "Lilly Labs",
+    isApproved: false,
+    tags: [
+      { id: '1', name: "Gatsby" },
+      { id: '2', name: "Tailwind" },
+      { id: '3', name: "Next.js" },
+      { id: '3', name: "Remix" },
+    ],
+    handleEdit: () => {},
+    handleDelete: () => {}
+  },
+};

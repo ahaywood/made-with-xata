@@ -142,4 +142,39 @@ describe("ProjectRow", () => {
     await user.click(screen.getByTestId('deleteProject'))
     expect(handleDelete).toHaveBeenCalled();
   });
+
+  it('is approved', async () => {
+    render(
+      <ProjectRow
+        featured={false}
+        slug="something"
+        name="This is it"
+        avatar="https://i.pravatar.cc/150?img=66"
+        contributor="Amy"
+        handleEdit={() => { }}
+        handleDelete={() => { }}
+      />)
+    expect(screen.getByText('This is it')).not.toHaveClass('italic');
+    expect(screen.getByText('This is it')).not.toHaveClass('text-gray');
+    expect(screen.getByText('Amy')).not.toHaveClass('italic');
+    expect(screen.getByText('Amy')).not.toHaveClass('text-gray');
+  });
+
+  it('is not approved', async () => {
+    render(
+      <ProjectRow
+        featured={false}
+        slug="something"
+        name="This is it"
+        avatar="https://i.pravatar.cc/150?img=66"
+        contributor="Amy"
+        handleEdit={() => { }}
+        handleDelete={() => { }}
+        isApproved={false}
+      />)
+    expect(screen.getByText('This is it')).toHaveClass('italic', {exact: false});
+    expect(screen.getByText('This is it')).toHaveClass('text-gray', {exact: false});
+    expect(screen.getByText('Amy')).toHaveClass('italic', {exact: false});
+    expect(screen.getByText('Amy')).toHaveClass('text-gray', {exact: false});
+  });
 });

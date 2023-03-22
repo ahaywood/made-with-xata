@@ -10,11 +10,12 @@ interface ProjectRowProps {
   avatar: string
   contributor: string
   tags?: Tag[]
+  isApproved?: boolean
   handleEdit: () => void
   handleDelete: () => void
 }
 
-const ProjectRow = ({ featured, slug, name, avatar, contributor, tags, handleEdit, handleDelete }: ProjectRowProps) => {
+const ProjectRow = ({ featured, slug, name, avatar, contributor, tags, isApproved = true,  handleEdit, handleDelete }: ProjectRowProps) => {
   return (
     <div className="admin-gallery-table items-center py-6 border-bunker border-b-2">
       <div className="absolute -left-5">
@@ -24,9 +25,9 @@ const ProjectRow = ({ featured, slug, name, avatar, contributor, tags, handleEdi
         {featured && (<Icon name="check" width={32} height={32} />)}
       </div>
       <div className="text-xl font-bold">
-        <Link href={`/${slug}`} className="hover:text-selectiveYellow hover:underline">{name}</Link>
+        <Link href={`/${slug}`} className={`hover:text-selectiveYellow hover:underline ${!isApproved && 'italic text-gray'}`}>{name}</Link>
       </div>
-      <div className="flex items-center gap-x-2 text-lg">
+      <div className={`flex items-center gap-x-2 text-lg ${!isApproved && 'italic text-gray'}`}>
         <Avatar src={avatar} alt={contributor} />
         {contributor}
       </div>
