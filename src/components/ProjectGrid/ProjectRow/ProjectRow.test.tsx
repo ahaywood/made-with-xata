@@ -1,17 +1,24 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ProjectRow } from './ProjectRow';
 
 describe('ProjectRow', () => {
+  const project = {
+    featured: false,
+    slug: 'something',
+    name: 'This is it',
+    contributor: {
+      avatar: 'https://i.pravatar.cc/150?img=66',
+      name: 'Amy',
+    },
+    isApproved: true,
+  } as Project;
+
   it('renders correctly', () => {
     expect(() => {
       render(
         <ProjectRow
-          featured={false}
-          slug="something"
-          name="This is it"
-          avatar="https://i.pravatar.cc/150?img=66"
-          contributor="Amy"
+          project={project}
           handleEdit={() => {}}
           handleDelete={() => {}}
         />
@@ -24,11 +31,10 @@ describe('ProjectRow', () => {
   it('displays as a featured component', () => {
     render(
       <ProjectRow
-        featured
-        slug="something"
-        name="This is it"
-        avatar="https://i.pravatar.cc/150?img=66"
-        contributor="Amy"
+        project={{
+          ...project,
+          featured: true,
+        }}
         handleEdit={() => {}}
         handleDelete={() => {}}
       />
@@ -39,11 +45,7 @@ describe('ProjectRow', () => {
   it('does not display as a featured component', () => {
     render(
       <ProjectRow
-        featured={false}
-        slug="something"
-        name="This is it"
-        avatar="https://i.pravatar.cc/150?img=66"
-        contributor="Amy"
+        project={project}
         handleEdit={() => {}}
         handleDelete={() => {}}
       />
@@ -54,11 +56,7 @@ describe('ProjectRow', () => {
   it('displays the project name', () => {
     render(
       <ProjectRow
-        featured={false}
-        slug="something"
-        name="This is it"
-        avatar="https://i.pravatar.cc/150?img=66"
-        contributor="Amy"
+        project={project}
         handleEdit={() => {}}
         handleDelete={() => {}}
       />
@@ -69,11 +67,7 @@ describe('ProjectRow', () => {
   it('links to the individual project', () => {
     render(
       <ProjectRow
-        featured={false}
-        slug="something"
-        name="This is it"
-        avatar="https://i.pravatar.cc/150?img=66"
-        contributor="Amy"
+        project={project}
         handleEdit={() => {}}
         handleDelete={() => {}}
       />
@@ -87,11 +81,7 @@ describe('ProjectRow', () => {
   it('displays the contributor', () => {
     render(
       <ProjectRow
-        featured={false}
-        slug="something"
-        name="This is it"
-        avatar="https://i.pravatar.cc/150?img=66"
-        contributor="Amy"
+        project={project}
         handleEdit={() => {}}
         handleDelete={() => {}}
       />
@@ -102,15 +92,13 @@ describe('ProjectRow', () => {
   it('displays the tags', () => {
     render(
       <ProjectRow
-        featured={false}
-        slug="something"
-        name="This is it"
-        avatar="https://i.pravatar.cc/150?img=66"
-        contributor="Amy"
-        tags={[
-          { id: '1', name: 'Gatsby' },
-          { id: '2', name: 'Tailwind' },
-        ]}
+        project={{
+          ...project,
+          tags: [
+            { id: '1', name: 'Gatsby' },
+            { id: '2', name: 'Tailwind' },
+          ],
+        }}
         handleEdit={() => {}}
         handleDelete={() => {}}
       />
@@ -124,16 +112,12 @@ describe('ProjectRow', () => {
     const handleEdit = jest.fn();
     render(
       <ProjectRow
-        featured={false}
-        slug="something"
-        name="This is it"
-        avatar="https://i.pravatar.cc/150?img=66"
-        contributor="Amy"
+        project={project}
         handleEdit={handleEdit}
         handleDelete={() => {}}
       />
     );
-    await user.click(screen.getByTestId('editProject'));
+    await waitFor(() => user.click(screen.getByTestId('editProject')));
     expect(handleEdit).toHaveBeenCalled();
   });
 
@@ -142,27 +126,19 @@ describe('ProjectRow', () => {
     const handleDelete = jest.fn();
     render(
       <ProjectRow
-        featured={false}
-        slug="something"
-        name="This is it"
-        avatar="https://i.pravatar.cc/150?img=66"
-        contributor="Amy"
+        project={project}
         handleEdit={() => {}}
         handleDelete={handleDelete}
       />
     );
-    await user.click(screen.getByTestId('deleteProject'));
+    await waitFor(() => user.click(screen.getByTestId('deleteProject')));
     expect(handleDelete).toHaveBeenCalled();
   });
 
   it('is approved', () => {
     render(
       <ProjectRow
-        featured={false}
-        slug="something"
-        name="This is it"
-        avatar="https://i.pravatar.cc/150?img=66"
-        contributor="Amy"
+        project={project}
         handleEdit={() => {}}
         handleDelete={() => {}}
       />
@@ -176,14 +152,9 @@ describe('ProjectRow', () => {
   it('is not approved', () => {
     render(
       <ProjectRow
-        featured={false}
-        slug="something"
-        name="This is it"
-        avatar="https://i.pravatar.cc/150?img=66"
-        contributor="Amy"
+        project={{ ...project, isApproved: false }}
         handleEdit={() => {}}
         handleDelete={() => {}}
-        isApproved={false}
       />
     );
     expect(screen.getByText('This is it')).toHaveClass('italic', {
