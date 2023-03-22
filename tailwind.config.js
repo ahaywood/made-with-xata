@@ -14,6 +14,7 @@ module.exports = {
         caribbeanGreen: '#00dc9d',
         montana: '#393939', /* dark gray */
         selectiveYellow: '#ffbb00',
+        stack: '#8c8c8c', /* light gray */
       },
       dropShadow: {
         toggle: '0px 1px 3px rgba(16, 24, 40, 0.4), 0px 1px 2px rgba(16, 24, 40, 0.15)'

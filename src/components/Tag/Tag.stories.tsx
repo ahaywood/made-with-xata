@@ -20,3 +20,10 @@ export const Primary: Story = {
     name: 'Tag',
   },
 };
+
+export const XNotShowing: Story = {
+  args: {
+    isXShowing: false,
+    name: 'Tag',
+  },
+};
