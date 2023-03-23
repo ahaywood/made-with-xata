@@ -10,7 +10,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="text-sm">
+    <footer className="text-sm bg-footer bg-cover pt-16">
       <div className="page pb-20">
         <div className="col-span-10">
           <div className="mb-10">

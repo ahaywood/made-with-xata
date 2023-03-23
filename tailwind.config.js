@@ -10,6 +10,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        header: "url('/images/header.svg')",
+        footer: "url('/images/footer.svg')",
+      },
+      backgroundSize: {
+        '100-auto': '100% auto',
+      },
       colors: {
         bunker: '#2d2d2d',
         caribbeanGreen: '#00dc9d',
@@ -35,8 +42,10 @@ module.exports = {
         folly: '#ff005d',
         gray: '#818181',
         eerieBlack: '#181818',
+        darkGray: '#575757',
       },
       dropShadow: {
+        browser: '0px 75px 150px rgba(52, 64, 84, 0.18)',
         toggle:
           '0px 1px 3px rgba(16, 24, 40, 0.4), 0px 1px 2px rgba(16, 24, 40, 0.15)',
       },

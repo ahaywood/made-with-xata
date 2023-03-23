@@ -64,4 +64,18 @@ describe('ButtonLink', () => {
     render(<ButtonLink href={href} label={label} width="short" />);
     expect(screen.getByText(label)).toHaveClass('px-7', { exact: false });
   });
+
+  it('is uses small text', () => {
+    render(
+      <ButtonLink href={href} label={label} width="short" textSize="small" />
+    );
+    expect(screen.getByText(label)).toHaveClass('text-sm', { exact: false });
+  });
+
+  it('is uses large text', () => {
+    render(
+      <ButtonLink href={href} label={label} width="short" textSize="large" />
+    );
+    expect(screen.getByText(label)).toHaveClass('text-lg', { exact: false });
+  });
 });

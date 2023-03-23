@@ -8,6 +8,7 @@ interface ButtonLinkProps {
   href: string;
   isButterflyShowing?: boolean;
   label: string;
+  textSize?: 'small' | 'large';
 }
 
 const ButtonLink = ({
@@ -16,6 +17,7 @@ const ButtonLink = ({
   href,
   isButterflyShowing = true,
   label,
+  textSize = 'small',
   width = 'normal',
 }: ButtonLinkProps) => (
   <Link href={href}>
@@ -27,7 +29,9 @@ const ButtonLink = ({
       data-testid="border"
     >
       <div
-        className={`flex items-center gap-x-2 text-sm font-bold text-white bg-black rounded-full relative z-rainbowButton
+        className={`flex items-center gap-x-2 font-bold text-white bg-black rounded-full relative z-rainbowButton
+        ${textSize === 'small' ? 'text-sm' : ''}
+        ${textSize === 'large' ? 'text-lg' : ''}
         ${width === 'short' ? 'px-7' : ''}
         ${width === 'normal' ? 'px-10' : ''}
         ${height === 'normal' ? 'py-4' : ''}

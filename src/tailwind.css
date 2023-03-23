@@ -10,11 +10,11 @@
   }
 
   h1 {
-    @apply font-pageTitle font-extralight text-6xl
+    @apply font-pageTitle font-extralight text-6xl leading-[1.5]
   }
 
   h2 {
-
+    @apply font-sans text-2xl font-normal leading-loose;
   }
 
   svg {
@@ -57,6 +57,14 @@
   .project-row:hover .drag-drop-handle {
     @apply block;
   }
+
+  .card-grid > div {
+    @apply flex-1;
+  }
+
+  .card-grid > div:nth-child(2n) {
+    @apply mt-24
+  }
 }
 
 @layer utilities {
@@ -90,5 +98,9 @@
 
   .page-padding-right {
     padding-right: calc((100vw-1240px)/2)
+  }
+
+  .gradient {
+    @apply bg-header bg-100-auto bg-no-repeat;
   }
 }

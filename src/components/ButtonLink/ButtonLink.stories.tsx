@@ -61,3 +61,21 @@ export const NoButterfly: Story = {
     label: 'Button Label',
   },
 };
+
+export const SmallText: Story = {
+  args: {
+    borderWidth: 'thin',
+    href: '#',
+    label: 'Button Label',
+    textSize: 'small',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    borderWidth: 'thin',
+    href: '#',
+    label: 'Button Label',
+    textSize: 'large',
+  },
+};
