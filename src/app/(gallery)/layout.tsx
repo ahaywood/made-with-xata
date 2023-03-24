@@ -1,4 +1,5 @@
 import { Footer } from '@/components/Footer';
+import { LoggedInBar } from '@/components/LoggedInBar';
 
 import '../globals.css';
 import '../../tailwind.css';
@@ -17,6 +18,15 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        {/* <LoggedInBar
+          buttonLabel="Edit"
+          buttonLink="#"
+          user={{
+            name: 'John Doe',
+            avatar: '',
+            avatarColor: 'alienArmpit',
+          }}
+        /> */}
         <Footer />
       </body>
     </html>

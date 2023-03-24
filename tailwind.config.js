@@ -43,6 +43,7 @@ module.exports = {
         gray: '#818181',
         eerieBlack: '#181818',
         darkGray: '#575757',
+        dimGray: '#6a6a6a',
       },
       dropShadow: {
         browser: '0px 75px 150px rgba(52, 64, 84, 0.18)',

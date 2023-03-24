@@ -17,6 +17,37 @@
     @apply font-sans text-2xl font-normal leading-loose;
   }
 
+  h3 {
+    @apply font-sans text-lg font-bold text-dimGray mb-3;;
+  }
+
+  label {
+    @apply block w-full text-left;
+  }
+
+  .field input[type=text],
+  .field input[type=email],
+  .field input[type=password],
+  .field input[type=number],
+  .field input[type=tel],
+  .field input[type=url],
+  .field input[type=date],
+  .field input[type=datetime-local],
+  .field input[type=month],
+  .field input[type=week],
+  .field input[type=time],
+  .field input[type=datetime],
+  .field input[type=color],
+  .field input[type=search],
+  .field textarea,
+  .field select {
+    @apply w-full bg-transparent border-[1px] border-white rounded-[4px] h-16 text-base px-4 mb-8 focus:border-selectiveYellow outline-none;
+  }
+
+  .field textarea {
+    @apply h-32
+  }
+
   svg {
     @apply fill-current;
   }
@@ -64,6 +95,14 @@
 
   .card-grid > div:nth-child(2n) {
     @apply mt-24
+  }
+
+  .project-description p:first-of-type {
+    @apply text-2xl leading-10 mb-7;
+  }
+
+  .project-description p {
+    @apply text-base leading-8 mb-7;
   }
 }
 

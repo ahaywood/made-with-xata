@@ -13,7 +13,7 @@ const LoggedInBar = ({
   buttonLink,
   user,
 }: /* props */ LoggedInBarProps) => (
-  <div className="bg-black py-3 z-accountBar fixed bottom-0 w-full">
+  <div className="bg-black py-3 z-accountBar fixed bottom-0 w-full border-t-[1px] border-darkGray">
     <div className="max-w-pageWidth mx-auto flex justify-between">
       <div className="flex items-center gap-x-8 relative">
         <ButtonLink
