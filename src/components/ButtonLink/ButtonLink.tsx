@@ -20,7 +20,7 @@ const ButtonLink = ({
   textSize = 'small',
   width = 'normal',
 }: ButtonLinkProps) => (
-  <Link href={href}>
+  <Link href={href} data-testid="buttonLink">
     <div
       className={`rainbow-border rounded-full relative inline-block
         ${borderWidth === 'thin' ? `p-[2px]` : ''}

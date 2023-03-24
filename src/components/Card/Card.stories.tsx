@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Card } from './Card';
+import { project } from './Card.mocks';
 
 const meta: Meta<typeof Card> = {
   title: 'Shared/Card',
@@ -16,5 +17,5 @@ export default meta;
 type Story = StoryObj<typeof Card>;
 
 export const Primary: Story = {
-  args: {},
+  args: { project },
 };
