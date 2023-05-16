@@ -12,7 +12,7 @@ const Tag = ({ isXShowing = true, handleClose = () => {}, name }: TagProps) => (
       ${isXShowing ? 'pr-4' : 'pr-5'}
     `}
   >
-    <div className="text-sm leading-[18px]">{name}</div>
+    <div className="text-sm leading-[18px] whitespace-nowrap">{name}</div>
     {isXShowing && (
       <button
         className="text-stack hover:text-white relative -top-[3px]"

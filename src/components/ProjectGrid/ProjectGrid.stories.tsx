@@ -18,13 +18,13 @@ type Story = StoryObj<typeof ProjectGrid>;
 
 export const Approved: Story = {
   args: {
-    projects: projects as Project[],
+    projects,
   },
 };
 
 export const Unapproved: Story = {
   args: {
-    projects: projects as Project[],
+    projects,
     isApproved: false,
   },
 };

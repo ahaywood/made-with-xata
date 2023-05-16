@@ -1,11 +1,12 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react';
 import { Tags } from './Tags';
 
-describe("Tags", () => {
+describe('Tags', () => {
   it('renders correctly', () => {
     expect(() => {
-      render(
-        <Tags />)
+      render(<Tags />);
     }).not.toThrow();
   });
 });
+
+// TODO: Write tests

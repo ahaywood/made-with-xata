@@ -47,4 +47,4 @@ export const projects = [
       { id: '2', name: 'Styled Components' },
     ],
   },
-];
+] as Project[];

@@ -18,7 +18,7 @@
   }
 
   h3 {
-    @apply font-sans text-lg font-bold text-dimGray mb-3;;
+    @apply font-sans text-lg font-bold text-dimGray mb-3;
   }
 
   label {
@@ -41,11 +41,11 @@
   .field input[type=search],
   .field textarea,
   .field select {
-    @apply w-full bg-transparent border-[1px] border-white rounded-[4px] h-16 text-base px-4 mb-8 focus:border-selectiveYellow outline-none;
+    @apply w-full bg-transparent border-[1px] border-white rounded-[4px] h-16 text-base px-4 focus:border-selectiveYellow outline-none;
   }
 
   .field textarea {
-    @apply h-32
+    @apply h-32 py-4;
   }
 
   svg {
@@ -54,6 +54,10 @@
 }
 
 @layer components {
+  .form-heading {
+    @apply text-5xl leading-tight font-light tracking-tight;
+  }
+
   .footer-links a,
   .legal-links a,
   .header-links a,
@@ -104,9 +108,29 @@
   .project-description p {
     @apply text-base leading-8 mb-7;
   }
+
+  .slideout-panel ::-webkit-scrollbar {
+      width: 6px;
+  }
 }
 
 @layer utilities {
+  .form {
+    @apply flex flex-col gap-8;
+  }
+
+  .box-wrapper {
+    @apply center min-h-[75vh];
+  }
+
+  .box {
+    @apply rounded-xl border-darkGray border-[1px] px-20 py-16 max-w-xl w-full
+  }
+
+  .form-heading {
+    @apply font-pageTitle font-light text-5xl leading-tight tracking-tight;
+  }
+
   .center {
     @apply flex items-center justify-center;
   }

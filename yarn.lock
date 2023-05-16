@@ -3279,6 +3279,11 @@
     "@webassemblyjs/ast" "1.11.1"
     "@xtuc/long" "4.2.2"
 
+"@xata.io/client@^0.23.3":
+  version "0.23.3"
+  resolved "https://registry.yarnpkg.com/@xata.io/client/-/client-0.23.3.tgz#44608cbb940cf0b4535e83ea9288b0694e5b6693"
+  integrity sha512-IzObjhN1m3RuDgcMfzWJ5wi61VML+wdYjInsvNGakFJIvRutndk98eNlIqY4Reb3haKo5x5uw81wvoymd15oqg==
+
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@xtuc/ieee754/-/ieee754-1.2.0.tgz#eef014a3145ae477a1cbc00cd1e552336dceb790"

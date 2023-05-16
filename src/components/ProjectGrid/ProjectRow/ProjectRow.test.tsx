@@ -1,3 +1,5 @@
+'use client';
+
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ProjectRow } from './ProjectRow';
@@ -16,62 +18,29 @@ describe('ProjectRow', () => {
 
   it('renders correctly', () => {
     expect(() => {
-      render(
-        <ProjectRow
-          project={project}
-          handleEdit={() => {}}
-          handleDelete={() => {}}
-        />
-      );
+      render(<ProjectRow project={project} />);
     }).not.toThrow();
   });
 
   it.skip('handles a click and drag', () => {});
 
   it('displays as a featured component', () => {
-    render(
-      <ProjectRow
-        project={{
-          ...project,
-          featured: true,
-        }}
-        handleEdit={() => {}}
-        handleDelete={() => {}}
-      />
-    );
+    render(<ProjectRow project={{ ...project, featured: true }} />);
     expect(screen.getByTestId('checkIcon')).toBeInTheDocument();
   });
 
   it('does not display as a featured component', () => {
-    render(
-      <ProjectRow
-        project={project}
-        handleEdit={() => {}}
-        handleDelete={() => {}}
-      />
-    );
+    render(<ProjectRow project={project} />);
     expect(screen.queryByTestId('checkIcon')).not.toBeInTheDocument();
   });
 
   it('displays the project name', () => {
-    render(
-      <ProjectRow
-        project={project}
-        handleEdit={() => {}}
-        handleDelete={() => {}}
-      />
-    );
+    render(<ProjectRow project={project} />);
     expect(screen.getByText('This is it')).toBeInTheDocument();
   });
 
   it('links to the individual project', () => {
-    render(
-      <ProjectRow
-        project={project}
-        handleEdit={() => {}}
-        handleDelete={() => {}}
-      />
-    );
+    render(<ProjectRow project={project} />);
     expect(screen.getByText('This is it').closest('a')).toHaveAttribute(
       'href',
       '/something'
@@ -79,13 +48,7 @@ describe('ProjectRow', () => {
   });
 
   it('displays the contributor', () => {
-    render(
-      <ProjectRow
-        project={project}
-        handleEdit={() => {}}
-        handleDelete={() => {}}
-      />
-    );
+    render(<ProjectRow project={project} />);
     expect(screen.getByText('Amy')).toBeInTheDocument();
   });
 
@@ -99,50 +62,14 @@ describe('ProjectRow', () => {
             { id: '2', name: 'Tailwind' },
           ],
         }}
-        handleEdit={() => {}}
-        handleDelete={() => {}}
       />
     );
     expect(screen.getByText('Gatsby')).toBeInTheDocument();
     expect(screen.getByText('Tailwind')).toBeInTheDocument();
   });
 
-  it('handles the edit button click', async () => {
-    const user = userEvent.setup();
-    const handleEdit = jest.fn();
-    render(
-      <ProjectRow
-        project={project}
-        handleEdit={handleEdit}
-        handleDelete={() => {}}
-      />
-    );
-    await waitFor(() => user.click(screen.getByTestId('editProject')));
-    expect(handleEdit).toHaveBeenCalled();
-  });
-
-  it('handles the delete button click', async () => {
-    const user = userEvent.setup();
-    const handleDelete = jest.fn();
-    render(
-      <ProjectRow
-        project={project}
-        handleEdit={() => {}}
-        handleDelete={handleDelete}
-      />
-    );
-    await waitFor(() => user.click(screen.getByTestId('deleteProject')));
-    expect(handleDelete).toHaveBeenCalled();
-  });
-
   it('is approved', () => {
-    render(
-      <ProjectRow
-        project={project}
-        handleEdit={() => {}}
-        handleDelete={() => {}}
-      />
-    );
+    render(<ProjectRow project={project} />);
     expect(screen.getByText('This is it')).not.toHaveClass('italic');
     expect(screen.getByText('This is it')).not.toHaveClass('text-gray');
     expect(screen.getByText('Amy')).not.toHaveClass('italic');
@@ -150,13 +77,7 @@ describe('ProjectRow', () => {
   });
 
   it('is not approved', () => {
-    render(
-      <ProjectRow
-        project={{ ...project, isApproved: false }}
-        handleEdit={() => {}}
-        handleDelete={() => {}}
-      />
-    );
+    render(<ProjectRow project={{ ...project, isApproved: false }} />);
     expect(screen.getByText('This is it')).toHaveClass('italic', {
       exact: false,
     });

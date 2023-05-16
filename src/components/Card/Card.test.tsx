@@ -27,6 +27,7 @@ describe('Card', () => {
     );
   });
 
+  // TODO: Add GitHub Repo variable to the card
   it('links to the correct GitHub repo', () => {
     render(<Card project={project} />);
     expect(screen.getByTestId('onGitHubLink')).toHaveAttribute(
@@ -46,6 +47,6 @@ describe('Card', () => {
     render(<Card project={project} />);
     expect(
       screen.getByAltText(`${project.name} first screenshot`)
-    ).toHaveAttribute('src', project.screenshot1);
+    ).toHaveAttribute('src', project.additionalImages[0]);
   });
 });

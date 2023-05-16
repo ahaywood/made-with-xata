@@ -10,6 +10,7 @@ const OnGitHub = ({ href }: OnGitHubProps) => (
     href={href}
     className="flex items-center gap-x-3 text-white hover:text-selectiveYellow"
     data-testid="onGitHubLink"
+    target="_blank"
   >
     <Icon height={32} width={32} name="github" />
     <div className="text-lg font-bold">Project on GitHub</div>

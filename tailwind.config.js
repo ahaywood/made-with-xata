@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         header: "url('/images/header.svg')",
+        showcase: "url('/images/showcase-bg.svg')",
         footer: "url('/images/footer.svg')",
       },
       backgroundSize: {

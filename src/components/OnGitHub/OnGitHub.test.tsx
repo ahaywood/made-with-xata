@@ -10,6 +10,7 @@ describe('OnGitHub', () => {
     }).not.toThrow();
   });
 
+  // TODO: Fix broken test
   it('links to the right place', () => {
     render(<OnGitHub href={href} />);
     expect(screen.getByRole('link')).toHaveAttribute('href', href);

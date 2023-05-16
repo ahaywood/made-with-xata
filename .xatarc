@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Amy-Dutton-s-workspace-bhcbd8.us-east-1.xata.sh/db/madewithxata",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

@@ -5,7 +5,8 @@ interface SubmitProps {
 }
 
 const Submit = ({ label }: SubmitProps) => (
-  <div
+  <button
+    type="submit"
     className="rainbow-border rounded-full relative inline-block p-[6px]"
     data-testid="border"
   >
@@ -13,7 +14,7 @@ const Submit = ({ label }: SubmitProps) => (
       <Butterfly height={24} width={24} />
       {label}
     </div>
-  </div>
+  </button>
 );
 
 export { Submit };

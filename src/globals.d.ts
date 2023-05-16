@@ -1,15 +1,22 @@
+interface Contributor {
+  id?: string;
+  name: string;
+  avatar: string;
+  avatarColor: ThemeColors;
+}
+
 interface Project {
   id: string;
   name: string;
   isApproved: boolean;
   slug: string;
-  featured: boolean;
-  contributor: {
-    name: string;
-    avatar: string;
-    avatarColor: ThemeColors;
-  };
-  tags: Tag[];
+  featured?: boolean;
+  contributor?: Contributor;
+  description?: string;
+  additionalImages?: string;
+  featuredImage?: string;
+  gitHubRepo?: string;
+  tags?: Tag[];
 }
 
 interface Tag {

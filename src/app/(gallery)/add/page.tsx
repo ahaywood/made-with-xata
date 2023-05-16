@@ -7,27 +7,30 @@ import { useState } from 'react';
 
 export default function Add() {
   const [project, setProject] = useState<Project>({
-    id: 'something',
     name: 'something',
-    isApproved: true,
+    isApproved: false,
     slug: 'something',
-    featured: true,
+    description: 'lorem ipsum',
+    featured: false,
+    featuredImage: '',
+    additionalImages: [],
+    projectUrl: 'https://example.com',
+    gitHubRepo: 'http://github.com',
     contributor: {
       name: 'Someone',
       avatar: 'https://avatars.githubusercontent.com/u/1234567?v=4',
       avatarColor: 'alienArmpit',
+      email: 'something@example.com",',
     },
     tags: [{ name: 'Tailwind', id: '1' }],
   });
 
   const updateForm = (updatedProject: Project) => {
     setProject(updatedProject);
-    console.log({ updatedProject });
-    console.log('form is updated');
   };
 
   return (
-    <div className="gradient">
+    <div className="bg-showcase bg-100-auto bg-no-repeat">
       <Header />
       <div className="page pt-24">
         <div className="col-start-3 col-span-8 text-center mb-20">
@@ -40,84 +43,12 @@ export default function Add() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2">
-        <div className="self-start sticky top-10">
-          Something
-          {/* <div className="">
-            <MobileDevice project={project} />
-          </div> */}
+      <div className="grid grid-cols-12 max-w-pageWidth mx-auto pb-[130px]">
+        <div className="self-start sticky top-0 col-span-5 col-start-1 justify-self-center">
+          <MobileDevice project={project} />
         </div>
-
-        <div className="">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
+        <div className="col-start-7 col-span-5">
+          <AddProjectForm updateForm={updateForm} />
         </div>
       </div>
     </div>

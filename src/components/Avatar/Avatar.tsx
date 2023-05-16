@@ -1,5 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import { getTextColor } from '@/utils/Colors';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Tailwind from '../../../tailwind.config';
 
 interface AvatarProps {
@@ -17,17 +18,17 @@ const Avatar = ({
 }: AvatarProps) => {
   if (src) {
     return (
-      <Image
+      <img
         src={src}
         alt={alt}
         height={size}
         width={size}
-        className="rounded-full"
+        className="rounded-full aspect-square object-cover"
       />
     );
   }
   const textColor = Tailwind.theme?.extend?.colors
-    ? getTextColor(Tailwind.theme?.extend?.colors[avatarColor])
+    ? getTextColor(Tailwind.theme.extend.colors[avatarColor])
     : 'folly';
   return (
     <div

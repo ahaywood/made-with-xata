@@ -1,11 +1,12 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react';
 import { MobileDevice } from './MobileDevice';
 
-describe("MobileDevice", () => {
+describe('MobileDevice', () => {
   it('renders correctly', () => {
     expect(() => {
-      render(
-        <MobileDevice />)
+      render(<MobileDevice />);
     }).not.toThrow();
   });
 });
+
+// TODO: Write tests

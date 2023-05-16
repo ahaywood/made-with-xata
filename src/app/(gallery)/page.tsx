@@ -3,8 +3,14 @@ import { slides } from '@/components/BrowserSlider/BrowserSlider.mocks';
 import { ButtonLink } from '@/components/ButtonLink';
 import { Card } from '@/components/Card/Card';
 import { Header } from '@/components/Header';
+import { getXataClient } from '@/xata';
 
-export default function Home() {
+const xata = getXataClient();
+
+export default async function Home() {
+  const projects = await xata.db.project.filter('isApproved', true).getAll();
+  // const featuredProjects = projects.filter((project) => project.featured);
+
   return (
     <div className="gradient">
       <Header />
@@ -37,18 +43,11 @@ export default function Home() {
       </div>
 
       <div className="grid grid-cols-2 gap-x-[60px] max-w-pageWidth mx-auto card-grid mb-[200px]">
-        <div>
-          <Card />
-        </div>
-        <div>
-          <Card />
-        </div>
-        <div>
-          <Card />
-        </div>
-        <div>
-          <Card />
-        </div>
+        {projects.map((project) => (
+          <div key={project.id}>
+            <Card project={project} />
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -4,7 +4,9 @@ import { BrowserSlider } from './BrowserSlider';
 describe('BrowserSlider', () => {
   it.skip('renders correctly', () => {
     expect(() => {
-      render(<BrowserSlider />);
+      render(<BrowserSlider slides={[]} />);
     }).not.toThrow();
   });
 });
+
+// TODO: Add Tests for the Project Slider

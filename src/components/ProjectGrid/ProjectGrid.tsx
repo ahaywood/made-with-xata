@@ -1,24 +1,32 @@
+'use client';
+
+import { Reorder } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import { ProjectRow } from './ProjectRow';
 
 interface ProjectGridProps {
   isApproved?: boolean;
-  projects: Project[];
+  xataData: string;
 }
 
-const ProjectGrid = ({ projects, isApproved = true }: ProjectGridProps) => {
-  const handleEdit = () => {
-    console.log('edit');
-  };
+const ProjectGrid = ({ isApproved = true, xataData }: ProjectGridProps) => {
+  const [orderedProjects, setOrderedProjects] = useState(
+    JSON.parse(xataData) as Partial<Project[]>
+  );
 
-  const handleDelete = () => {
-    console.log('delete');
-  };
+  useEffect(() => {
+    fetch('/api/project/reorder', {
+      method: 'POST',
+      body: JSON.stringify(orderedProjects),
+    }).catch((err) => console.error(err));
+  }, [orderedProjects]);
 
   return (
     <div className="max-w-pageWidth mx-auto">
+      {/* table header */}
       {isApproved ? (
         <div className="admin-gallery-table text-sm pb-3 border-bunker border-b-2 sticky pt-3 top-0 bg-black z-stickyTableHeader">
-          <div>Featured?</div>
+          <div>Carousel?</div>
           <div>Project</div>
           <div>Contributor</div>
           <div>Tags</div>
@@ -34,14 +42,31 @@ const ProjectGrid = ({ projects, isApproved = true }: ProjectGridProps) => {
 
       {/* table rows */}
       <div className="relative z-stickyTableContents">
-        {projects.map((project) => (
-          <ProjectRow
-            key={project.id}
-            project={{ ...project, isApproved }}
-            handleEdit={handleEdit}
-            handleDelete={handleDelete}
-          />
-        ))}
+        <Reorder.Group
+          axis="y"
+          values={orderedProjects}
+          onReorder={setOrderedProjects}
+        >
+          {orderedProjects.map((project) => {
+            if (!project) return <li />;
+
+            // have to simplify the result coming back from Xata so I can pass it to a client component
+            const { contributor, tags, ...simplifiedProject } = project;
+
+            return (
+              <Reorder.Item key={project.id} value={project}>
+                <ProjectRow
+                  key={project.id}
+                  project={{
+                    ...simplifiedProject,
+                    contributor: { ...(contributor as Contributor) },
+                  }}
+                  tags={tags}
+                />
+              </Reorder.Item>
+            );
+          })}
+        </Reorder.Group>
       </div>
     </div>
   );

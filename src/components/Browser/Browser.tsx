@@ -7,12 +7,13 @@ import { useEffect, useRef, useState } from 'react';
 /* eslint-disable @next/next/no-img-element */
 export interface BrowserProps {
   alt: string;
+  link?: string;
   src: string;
   width: number;
   height: number;
 }
 
-const Browser = ({ alt, height, src, width }: BrowserProps) => {
+const Browser = ({ alt, height, link = '', src, width }: BrowserProps) => {
   const imageRef = useRef<HTMLImageElement>(null);
   const [scrollHeight, setScrollHeight] = useState(0);
 
@@ -21,7 +22,7 @@ const Browser = ({ alt, height, src, width }: BrowserProps) => {
   }, [height]);
 
   return (
-    <div>
+    <div style={{ width: `${width}px`, height: `${height}px` }}>
       <div className="flex gap-x-2 bg-opacity-50 bg-white py-2 px-3 rounded-t-md">
         <div className="w-2 h-2 circle bg-white" />
         <div className="w-2 h-2 circle bg-white" />
@@ -32,7 +33,23 @@ const Browser = ({ alt, height, src, width }: BrowserProps) => {
         style={{ width: `${width}px`, height: `${height}px` }}
         data-testid="browserComponent"
       >
-        <Link href="#">
+        {link ? (
+          <Link href="#">
+            <motion.img
+              whileHover={{
+                y: -scrollHeight,
+                transition: {
+                  duration: (scrollHeight / height) * 3,
+                  ease: [0.34, 0.12, 0.6, 1.1],
+                },
+              }}
+              ref={imageRef}
+              alt={alt}
+              src={src}
+              className="w-full drop-shadow-browser"
+            />
+          </Link>
+        ) : (
           <motion.img
             whileHover={{
               y: -scrollHeight,
@@ -46,7 +63,7 @@ const Browser = ({ alt, height, src, width }: BrowserProps) => {
             src={src}
             className="w-full drop-shadow-browser"
           />
-        </Link>
+        )}
       </div>
     </div>
   );

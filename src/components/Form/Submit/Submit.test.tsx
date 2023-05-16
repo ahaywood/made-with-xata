@@ -1,11 +1,12 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react';
 import { Submit } from './Submit';
 
-describe("Submit", () => {
+describe('Submit', () => {
   it('renders correctly', () => {
     expect(() => {
-      render(
-        <Submit />)
+      render(<Submit />);
     }).not.toThrow();
   });
 });
+
+// TODO: Write tests
