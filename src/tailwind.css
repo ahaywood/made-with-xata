@@ -22,7 +22,7 @@
   }
 
   label {
-    @apply block w-full text-left;
+    @apply block w-full text-left mb-1;
   }
 
   .field input[type=text],
@@ -54,6 +54,10 @@
 }
 
 @layer components {
+  .field {
+    @apply mb-6;
+  }
+
   .form-heading {
     @apply text-5xl leading-tight font-light tracking-tight;
   }
@@ -78,7 +82,15 @@
   }
 
   input[type=checkbox]:checked + .switch-wrapper {
-    @apply justify-end bg-caribbeanGreen;
+    @apply bg-caribbeanGreen;
+  }
+
+  input[type=checkbox] + .switch-wrapper .switch {
+    @apply transition-transform;
+  }
+
+  input[type=checkbox]:checked + .switch-wrapper .switch {
+    @apply translate-x-4;
   }
 
   .admin-gallery-table {
