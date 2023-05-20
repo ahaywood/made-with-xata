@@ -14,8 +14,19 @@ const ProjectGrid = ({ isApproved = true, xataData }: ProjectGridProps) => {
     JSON.parse(xataData) as Partial<Project[]>
   );
 
+  const deleteProject = (projectId: string) => {
+    // remove project frm the list
+    const updatedProjects = orderedProjects.filter(
+      (project) => project?.id !== projectId
+    );
+
+    // update the state
+    setOrderedProjects(updatedProjects);
+  };
+
   useEffect(() => {
-    fetch('/api/project/reorder', {
+    console.log({ orderedProjects });
+    fetch(`${process.env.url as string}/api/project/reorder`, {
       method: 'POST',
       body: JSON.stringify(orderedProjects),
     }).catch((err) => console.error(err));
@@ -62,6 +73,7 @@ const ProjectGrid = ({ isApproved = true, xataData }: ProjectGridProps) => {
                     contributor: { ...(contributor as Contributor) },
                   }}
                   tags={tags}
+                  deleteProject={deleteProject}
                 />
               </Reorder.Item>
             );
