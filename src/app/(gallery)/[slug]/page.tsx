@@ -1,14 +1,13 @@
-import { Browser } from '@/components/Browser';
 import { ButtonLink } from '@/components/ButtonLink';
 import { Card } from '@/components/Card';
 import { ContributorDetails } from '@/components/ContributorDetails';
 import { Header } from '@/components/Header';
 import { OnGitHub } from '@/components/OnGitHub';
 import { Tag } from '@/components/Tag';
-import Image from 'next/image';
 import Link from 'next/link';
 import { getXataClient } from '@/xata';
 import { PageProps } from '../../../../.next/types/app/(gallery)/page';
+import { FeaturedScreenshot } from './components/FeaturedScreenshot';
 
 const xata = getXataClient();
 
@@ -66,43 +65,7 @@ const IndividualItem = async (context: PageProps) => {
         </div>
       </div>
 
-      <div className="page pb-20">
-        <div className="col-start-3 col-span-8">
-          <Browser
-            alt="Kittens"
-            src="http://placekitten.com/1080/1080"
-            width={815}
-            height={544}
-          />
-        </div>
-        {/* thumbnails */}
-        <div className="col-span-2 flex flex-col gap-10 justify-center items-end">
-          <button type="button">
-            <Image
-              alt="thumbnail"
-              height={11}
-              width={177}
-              src="/images/placeholder-thumbnail.png"
-            />
-          </button>
-          <button type="button">
-            <Image
-              alt="thumbnail"
-              height={11}
-              width={177}
-              src="/images/placeholder-thumbnail.png"
-            />
-          </button>
-          <button type="button">
-            <Image
-              alt="thumbnail"
-              height={11}
-              width={177}
-              src="/images/placeholder-thumbnail.png"
-            />
-          </button>
-        </div>
-      </div>
+      <FeaturedScreenshot />
 
       <div className="page">
         <div className="col-span-7 mb-44 project-description">
@@ -142,9 +105,8 @@ const IndividualItem = async (context: PageProps) => {
           <h2 className="mb-16 text-center">More Projects, More Inspiration</h2>
           <div className="overflow-x-scroll pb-5 snap-mandatory snap-x flex gap-x-14 px-5">
             {additionalProjects.records.map((item) => (
-              <div className="snap-center flex-1 max-w-[590px]">
+              <div className="snap-center flex-1 max-w-[590px]" key={item.id}>
                 <Card
-                  key={item.id}
                   project={{
                     id: item.id,
                     name: item.name,
