@@ -43,7 +43,9 @@ type ThemeColors =
   | 'folly';
 
 interface User {
-  name: string;
-  avatar: string;
-  avatarColor: ThemeColors;
+  name?: string;
+  email: string;
+  avatar?: string;
+  avatarColor?: ThemeColors;
+  password?: string;
 }

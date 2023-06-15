@@ -1,10 +1,12 @@
 'use server';
 
+import { slugify } from '@/utils/Slugify';
+
 import { getXataClient } from '../xata';
 
 const xata = getXataClient();
 
-async function AddProject(data: Project) {
+async function addProject(data: Project) {
   const record = await xata.db.project.create({
     name: data.name,
     isApproved: data.isApproved || false,
@@ -21,7 +23,7 @@ async function AddProject(data: Project) {
   console.log(record);
 }
 
-async function EditProject(data: Project) {
+async function editProject(data: Project) {
   const record = await xata.db.project.update(data.id, {
     name: data.name,
     isApproved: data.isApproved || false,
@@ -38,11 +40,10 @@ async function EditProject(data: Project) {
   console.log(record);
 }
 
-async function ReorderProjects(data) { }
+async function reorderProjects(data) { }
 
-async function DeleteProject(projectId: string) {
-  const record = await xata.db.project.delete(projectId);
-  console.log(record);
+async function removeProject(projectId: string) {
+  await xata.db.project.delete(projectId);
 }
 
-export { AddProject, EditProject, ReorderProjects, DeleteProject };
+export { addProject, editProject, reorderProjects, removeProject };

@@ -2,6 +2,7 @@
 
 import { Reorder } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { removeProject } from '@/app/actions';
 import { ProjectRow } from './ProjectRow';
 
 interface ProjectGridProps {
@@ -16,20 +17,15 @@ const ProjectGrid = ({ isApproved = true, xataData }: ProjectGridProps) => {
 
   const deleteProject = (projectId: string) => {
     // remove the project from the database
-    fetch(`${process.env.url as string}/api/project/${projectId}`, {
-      method: 'POST',
-      body: JSON.stringify({ action: 'delete' }),
-    })
-      .then(() => {
-        // remove project frm the list
-        const updatedProjects = orderedProjects.filter(
-          (project) => project?.id !== projectId
-        );
+    removeProject(projectId);
 
-        // update the state
-        setOrderedProjects(updatedProjects);
-      })
-      .catch((err) => console.error(err));
+    // remove project frm the list
+    const updatedProjects = orderedProjects.filter(
+      (project) => project?.id !== projectId
+    );
+
+    // update the state
+    setOrderedProjects(updatedProjects);
   };
 
   useEffect(() => {

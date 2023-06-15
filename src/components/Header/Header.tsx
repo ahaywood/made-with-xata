@@ -14,19 +14,7 @@ const Header = () => (
             </Link>
           </li>
           <li>
-            <Link href={CONSTANTS.NAV.FEATURES}>Features</Link>
-          </li>
-          <li>
-            <Link href={CONSTANTS.NAV.PRICING}>Pricing</Link>
-          </li>
-          <li>
-            <Link href={CONSTANTS.NAV.BLOG}>Blog</Link>
-          </li>
-          <li>
-            <Link href={CONSTANTS.NAV.DOCS}>Docs</Link>
-          </li>
-          <li>
-            <Link href={CONSTANTS.NAV.AI}>AI</Link>
+            <Link href={CONSTANTS.NAV.GALLERY}>All Projects</Link>
           </li>
         </ul>
       </nav>

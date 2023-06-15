@@ -1,11 +1,13 @@
 import { Butterfly } from '@/components/Butterfly';
 
 interface SubmitProps {
+  disabled?: boolean;
   label: string;
 }
 
-const Submit = ({ label }: SubmitProps) => (
+const Submit = ({ disabled = false, label }: SubmitProps) => (
   <button
+    disabled={disabled}
     type="submit"
     className="rainbow-border rounded-full relative inline-block p-[6px]"
     data-testid="border"
