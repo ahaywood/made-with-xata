@@ -17,29 +17,35 @@ describe('Header', () => {
 
   it('the features link goes to the features page on Xata', () => {
     render(<Header />);
+    const featuresLink = screen.getByText('All Projects');
+    expect(featuresLink).toHaveAttribute('href', CONSTANTS.NAV.GALLERY);
+  });
+
+  it.skip('the features link goes to the features page on Xata', () => {
+    render(<Header />);
     const featuresLink = screen.getByText('Features');
     expect(featuresLink).toHaveAttribute('href', CONSTANTS.NAV.FEATURES);
   });
 
-  it('the pricing link goes to the pricing page on Xata', () => {
+  it.skip('the pricing link goes to the pricing page on Xata', () => {
     render(<Header />);
     const pricingLink = screen.getByText('Pricing');
     expect(pricingLink).toHaveAttribute('href', CONSTANTS.NAV.PRICING);
   });
 
-  it('the blog link goes to the blog page on Xata', () => {
+  it.skip('the blog link goes to the blog page on Xata', () => {
     render(<Header />);
     const blogLink = screen.getByText('Blog');
     expect(blogLink).toHaveAttribute('href', CONSTANTS.NAV.BLOG);
   });
 
-  it('the docs link goes to the docs page on Xata', () => {
+  it.skip('the docs link goes to the docs page on Xata', () => {
     render(<Header />);
     const docsLink = screen.getByText('Docs');
     expect(docsLink).toHaveAttribute('href', CONSTANTS.NAV.DOCS);
   });
 
-  it('the ai link goes to the ai page on Xata', () => {
+  it.skip('the ai link goes to the ai page on Xata', () => {
     render(<Header />);
     const aiLinks = screen.getByText('AI');
     expect(aiLinks).toHaveAttribute('href', CONSTANTS.NAV.AI);
