@@ -1,15 +1,21 @@
 export const projects = [
   {
     id: '1',
-    isApproved: true,
-    featured: true,
-    slug: 'some-slug',
     name: 'Prune Your Follows',
+    isApproved: true,
+    slug: 'some-slug',
+    featured: true,
     contributor: {
       name: 'Lilly Labs',
       avatar: 'https://i.pravatar.cc/150?img=66',
       avatarColor: 'folly',
     },
+    description: 'This is a description',
+    additionalImages:
+      'https://picsum.photos/seed/1686775703296/300/300.jpg, https://picsum.photos/seed/1686775723266/300/300.jpg',
+    featuredImage: 'https://picsum.photos/seed/1686775733168/300/300.jpg',
+    gitHubRepo: 'http://github.com',
+    projectUrl: 'http://google.com',
     tags: [
       { id: '1', name: 'Gatsby' },
       { id: '2', name: 'Tailwind' },

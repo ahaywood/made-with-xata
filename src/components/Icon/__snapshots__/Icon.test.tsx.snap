@@ -14,9 +14,13 @@ exports[`Icon Edit Icon renders correctly 1`] = `[Function]`;
 
 exports[`Icon Email Icon renders correctly 1`] = `[Function]`;
 
+exports[`Icon Filter Icon renders correctly 1`] = `[Function]`;
+
 exports[`Icon GitHub Icon renders correctly 1`] = `[Function]`;
 
 exports[`Icon LinkedIn Icon renders correctly 1`] = `[Function]`;
+
+exports[`Icon Search Icon renders correctly 1`] = `[Function]`;
 
 exports[`Icon Twitter Icon renders correctly 1`] = `[Function]`;
 

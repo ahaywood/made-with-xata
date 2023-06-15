@@ -99,6 +99,19 @@ describe('Icon', () => {
     });
   });
 
+  describe('Filter Icon', () => {
+    it('rendering the filter icon', () => {
+      render(<Icon name="filter" />);
+      expect(screen.getByTestId('filterIcon')).toBeInTheDocument();
+    });
+
+    it('renders correctly', () => {
+      expect(() => {
+        render(<Icon name="filter" />);
+      }).toMatchSnapshot();
+    });
+  });
+
   describe('GitHub Icon', () => {
     it('rendering the github icon', () => {
       render(<Icon name="github" />);
@@ -121,6 +134,19 @@ describe('Icon', () => {
     it('renders correctly', () => {
       expect(() => {
         render(<Icon name="linkedin" />);
+      }).toMatchSnapshot();
+    });
+  });
+
+  describe('Search Icon', () => {
+    it('rendering the search icon', () => {
+      render(<Icon name="search" />);
+      expect(screen.getByTestId('searchIcon')).toBeInTheDocument();
+    });
+
+    it('renders correctly', () => {
+      expect(() => {
+        render(<Icon name="search" />);
       }).toMatchSnapshot();
     });
   });

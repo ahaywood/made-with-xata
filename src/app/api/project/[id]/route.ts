@@ -1,31 +1,42 @@
-import { redirect, useSearchParams } from 'next/navigation';
-import { NextRequest, NextResponse } from 'next/server';
 import { getXataClient } from '@/xata';
 
 const xata = getXataClient();
 
-export function DELETE(request: NextRequest) {
-  const id = request.nextUrl.pathname.split('/')[3];
-  console.log({ id });
-  return new NextResponse(JSON.stringify({ success: true }), { status: 200 });
+interface DataInterface {
+  action: string;
+}
+
+interface ResponseInterface {
+  id: string;
 }
 
 // update an existing project
-export async function POST(request: NextRequest) {
-  const id = request.nextUrl.pathname.split('/')[3];
-  const data = await request.formData();
-  const action = data.get('action');
+export async function POST(req: Request, res: Response) {
+  const data = (await req.json()) as DataInterface;
+
+  const { id } = res.params as ResponseInterface;
+  const { action } = data;
 
   // delete a project
   if (action === 'delete') {
     const record = await xata.db.project.delete(id);
-    console.log({ record });
+    return new Response(JSON.stringify({ success: true, record }), {
+      status: 200,
+    });
   }
+
+  return new Response(JSON.stringify({ success: true, data, req, res }), {
+    status: 200,
+  });
+  /*
 
   if (action === 'edit') {
     console.log('edit a project');
+    return NextResponse.json({ success: true, id, action });
   }
 
-  console.log({ id, action });
-  redirect('/admin');
+  // console.log({ id, action });
+  // redirect('/admin');
+  return NextResponse.json({ success: true, id, action });
+  */
 }

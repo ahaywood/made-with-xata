@@ -5,11 +5,8 @@ export const project = {
   slug: 'prune-your-follows',
   featured: true,
   featuredImage: 'http://placekitten.com/1080/1080',
-  additionalImages: [
-    'http://placekitten.com/1080/720',
-    'http://placekitten.com/1080/721',
-    'http://placekitten.com/1080/722',
-  ],
+  additionalImages:
+    'http://placekitten.com/1080/720, http://placekitten.com/1080/721, http://placekitten.com/1080/722',
   description: 'A tool to help you prune your Twitter follows',
   projectUrl: 'http://google.com',
   gitHubRepo: 'http://github.com',

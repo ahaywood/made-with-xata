@@ -26,7 +26,7 @@ describe('LoggedInBar', () => {
     expect(screen.getByText('Edit')).toBeInTheDocument();
   });
 
-  it('shows the All Projects link', () => {
+  it('shows the Manage Projects link', () => {
     render(
       <LoggedInBar
         user={user}
@@ -34,6 +34,9 @@ describe('LoggedInBar', () => {
         buttonLink="https://www.google.com"
       />
     );
-    expect(screen.getByText('All Projects')).toHaveAttribute('href', '/');
+    expect(screen.getByText('Manage Projects')).toHaveAttribute(
+      'href',
+      '/admin'
+    );
   });
 });

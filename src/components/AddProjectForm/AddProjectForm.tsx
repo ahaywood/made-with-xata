@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { Submit } from '../Form/Submit';
 
@@ -15,7 +15,10 @@ const AddProjectForm = ({ updateForm = () => {} }: AddProjectFormProps) => {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   const watchAllFields = watch([
     'projectName',

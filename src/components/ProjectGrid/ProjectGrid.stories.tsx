@@ -16,15 +16,16 @@ const meta: Meta<typeof ProjectGrid> = {
 export default meta;
 type Story = StoryObj<typeof ProjectGrid>;
 
+// isApproved = true, by default
 export const Approved: Story = {
   args: {
-    projects,
+    xataData: JSON.stringify(projects),
   },
 };
 
 export const Unapproved: Story = {
   args: {
-    projects,
+    xataData: JSON.stringify(projects),
     isApproved: false,
   },
 };

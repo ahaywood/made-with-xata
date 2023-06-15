@@ -33,7 +33,11 @@ const Header = ({ user }: HeaderProps) => {
       </div>
       {typeof window === 'object' &&
         createPortal(
-          <SlideOutPanel defaultIsShowing={showModal} toggleModal={toggleModal}>
+          <SlideOutPanel
+            data-testid="slideOutPanel"
+            defaultIsShowing={showModal}
+            toggleModal={toggleModal}
+          >
             <ProjectForm state="add" />
           </SlideOutPanel>,
           document.body

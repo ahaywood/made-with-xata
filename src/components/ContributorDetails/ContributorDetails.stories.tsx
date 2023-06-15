@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { ContributorDetails } from './ContributorDetails';
+import { contributor } from './ContributorDetails.mocks';
 
 const meta: Meta<typeof ContributorDetails> = {
   title: 'Shared/ContributorDetails',
@@ -17,6 +18,7 @@ type Story = StoryObj<typeof ContributorDetails>;
 
 export const Primary: Story = {
   args: {
-    // args here
+    contributor,
+    githubRepo: 'http://github.com',
   },
 };

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Header } from './Header';
+import { user } from './Header.mocks';
 
 const meta: Meta<typeof Header> = {
   title: 'Admin/Header',
@@ -17,10 +18,6 @@ type Story = StoryObj<typeof Header>;
 
 export const Primary: Story = {
   args: {
-    user: {
-      name: 'John Doe',
-      avatar: 'https://i.pravatar.cc/300',
-      avatarColor: 'alienArmpit',
-    },
+    user,
   },
 };

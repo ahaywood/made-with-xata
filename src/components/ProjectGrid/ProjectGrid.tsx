@@ -15,13 +15,21 @@ const ProjectGrid = ({ isApproved = true, xataData }: ProjectGridProps) => {
   );
 
   const deleteProject = (projectId: string) => {
-    // remove project frm the list
-    const updatedProjects = orderedProjects.filter(
-      (project) => project?.id !== projectId
-    );
+    // remove the project from the database
+    fetch(`${process.env.url as string}/api/project/${projectId}`, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'delete' }),
+    })
+      .then(() => {
+        // remove project frm the list
+        const updatedProjects = orderedProjects.filter(
+          (project) => project?.id !== projectId
+        );
 
-    // update the state
-    setOrderedProjects(updatedProjects);
+        // update the state
+        setOrderedProjects(updatedProjects);
+      })
+      .catch((err) => console.error(err));
   };
 
   useEffect(() => {

@@ -1,12 +1,10 @@
-import { redirect } from 'next/navigation';
+// import { redirect } from 'next/navigation';
 
 export async function POST(request: Request) {
-  const data = await request.formData();
-
-  const projectName = data.get('projectName');
-  console.log({ projectName });
-
   // TODO: Save project name to database
 
-  redirect('/admin');
+  return new Response(JSON.stringify({ success: true }), {
+    status: 200,
+  });
+  // redirect('/admin');
 }

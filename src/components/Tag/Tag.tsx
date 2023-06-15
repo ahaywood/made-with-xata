@@ -15,7 +15,7 @@ const Tag = ({ isXShowing = true, handleClose = () => {}, name }: TagProps) => (
     <div className="text-sm leading-[18px] whitespace-nowrap">{name}</div>
     {isXShowing && (
       <button
-        className="text-stack hover:text-white relative -top-[3px]"
+        className="text-stack hover:text-white relative"
         onClick={() => handleClose()}
         type="button"
       >

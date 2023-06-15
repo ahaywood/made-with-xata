@@ -8,15 +8,18 @@ interface Contributor {
 interface Project {
   id: string;
   name: string;
-  isApproved: boolean;
+  isApproved?: boolean;
   slug: string;
   featured?: boolean;
   contributor?: Contributor;
   description?: string;
   additionalImages?: string;
   featuredImage?: string;
+  featuredOnHomepage?: boolean;
+  featuredInCarousel?: boolean;
   gitHubRepo?: string;
   tags?: Tag[];
+  projectUrl?: string;
 }
 
 interface Tag {

@@ -24,10 +24,10 @@ const LoggedInBar = ({
           width="short"
         />
         <Link
-          href="/"
+          href="/admin"
           className="hover:text-selectiveYellow hover:underline font-bold"
         >
-          All Projects
+          Manage Projects
         </Link>
       </div>
       <AccountNav user={user} />

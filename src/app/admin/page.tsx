@@ -5,12 +5,15 @@ const xata = getXataClient();
 
 export default async function Admin() {
   const projects = await xata.db.project
+    .sort('order', 'asc')
     .select([
       'id',
       'name',
+      'featuredOnHomepage',
       'featuredInCarousel',
       'slug',
       'isApproved',
+      'order',
       'contributor.*',
     ])
     .getAll();

@@ -2,7 +2,6 @@ import { getXataClient } from '@/xata';
 
 export async function POST(req: Request) {
   const data = (await req.json()) as Project[];
-  console.log({ data });
 
   // loop over array and update the order for each
   const xata = getXataClient();

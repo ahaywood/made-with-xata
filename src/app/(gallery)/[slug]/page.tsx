@@ -6,21 +6,28 @@ import { OnGitHub } from '@/components/OnGitHub';
 import { Tag } from '@/components/Tag';
 import Link from 'next/link';
 import { getXataClient } from '@/xata';
-import { PageProps } from '../../../../.next/types/app/(gallery)/page';
 import { FeaturedScreenshot } from './components/FeaturedScreenshot';
+
+type PageContext = {
+  params: {
+    slug: string;
+  };
+};
 
 const xata = getXataClient();
 
-const IndividualItem = async (context: PageProps) => {
+const IndividualItem = async (context: PageContext) => {
+  const slug: string = context?.params?.slug;
+
   // get the featured project
   const project = await xata.db.project
-    .filter('slug', context.params.slug)
+    .filter('slug', slug)
     .select(['*', 'contributor.*'])
     .getAll();
 
   // get the tags for the featured project
   const tags = await xata.db.tag_project
-    .filter('projects.id', project[0].id)
+    .filter('projects.id', project[0]?.id)
     .select(['tags.name', 'tags.id'])
     .getAll();
 
@@ -42,35 +49,39 @@ const IndividualItem = async (context: PageProps) => {
       },
     });
 
-  console.log({ additionalProjects });
-
   return (
     <div className="gradient">
       <Header />
       <div className="page text-center pt-24 mb-16">
         <div className="col-start-3 col-span-8">
-          <h1>{project[0].name}</h1>
-          <h2 className="mb-8">{project[0].description}</h2>
+          <h1>{project[0]?.name && project[0].name}</h1>
+          <h2 className="mb-8">
+            {project[0]?.description && project[0].description}
+          </h2>
 
           <div className="flex justify-center items-center gap-x-12">
-            <Link
-              className="bg-black text-lg py-5 px-10 rounded-full hover:bg-selectiveYellow hover:text-black"
-              href={project[0].projectUrl as string}
-              target="_blank"
-            >
-              Visit Website
-            </Link>
-            <OnGitHub href={project[0].gitHubRepo as string} />
+            {project[0]?.projectUrl && (
+              <Link
+                className="bg-black text-lg py-5 px-10 rounded-full hover:bg-selectiveYellow hover:text-black"
+                href={project[0].projectUrl}
+                target="_blank"
+              >
+                Visit Website
+              </Link>
+            )}
+            {project[0]?.gitHubRepo && (
+              <OnGitHub href={project[0].gitHubRepo} />
+            )}
           </div>
         </div>
       </div>
 
-      <FeaturedScreenshot />
+      <FeaturedScreenshot featuredImages={[]} />
 
       <div className="page">
         <div className="col-span-7 mb-44 project-description">
           <h3>About this Project</h3>
-          {project[0].description}
+          {project[0]?.description && project[0].description}
         </div>
 
         <div className="col-start-9 col-span-4 mb-44">
@@ -83,7 +94,7 @@ const IndividualItem = async (context: PageProps) => {
                   (project[0]?.contributor?.avatarColor as ThemeColors) ||
                   'alienArmpit',
               }}
-              githubRepo={project[0]?.gitHubRepo}
+              githubRepo={project[0]?.gitHubRepo as string}
             />
           </div>
 
@@ -92,7 +103,11 @@ const IndividualItem = async (context: PageProps) => {
               <h3>Tagged As</h3>
               <div className="flex flex-wrap gap-4">
                 {tags.map((tag) => (
-                  <Tag key={tag.id} name={tag.tags.name} isXShowing={false} />
+                  <Tag
+                    key={tag.id}
+                    name={tag?.tags?.name as string}
+                    isXShowing={false}
+                  />
                 ))}
               </div>
             </div>
@@ -109,13 +124,13 @@ const IndividualItem = async (context: PageProps) => {
                 <Card
                   project={{
                     id: item.id,
-                    name: item.name,
-                    description: item.description,
-                    projectUrl: item.projectUrl,
-                    slug: item.slug,
-                    gitHubRepo: item.gitHubRepo,
-                    featuredImage: item.featuredImage,
-                    additionalImages: item.additionalImages,
+                    name: item.name as string,
+                    description: item.description as string,
+                    projectUrl: item.projectUrl as string,
+                    slug: item.slug as string,
+                    gitHubRepo: item.gitHubRepo as string,
+                    featuredImage: item.featuredImage as string,
+                    additionalImages: item.additionalImages as string,
                   }}
                 />
               </div>

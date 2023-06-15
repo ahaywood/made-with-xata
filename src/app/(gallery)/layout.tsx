@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
-        {/* <LoggedInBar
+        <LoggedInBar
           buttonLabel="Edit"
           buttonLink="#"
           user={{
@@ -26,7 +26,7 @@ export default function RootLayout({
             avatar: '',
             avatarColor: 'alienArmpit',
           }}
-        /> */}
+        />
         <Footer />
       </body>
     </html>

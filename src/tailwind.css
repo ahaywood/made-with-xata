@@ -25,6 +25,7 @@
     @apply block w-full text-left mb-1;
   }
 
+  .field .input,
   .field input[type=text],
   .field input[type=email],
   .field input[type=password],
@@ -44,8 +45,12 @@
     @apply w-full bg-transparent border-[1px] border-white rounded-[4px] h-16 text-base px-4 focus:border-selectiveYellow outline-none;
   }
 
+  .field .input input[type=text] {
+    @apply border-0 focus:border-0 px-0
+  }
+
   .field textarea {
-    @apply h-32 py-4;
+    @apply h-40 py-4;
   }
 
   svg {

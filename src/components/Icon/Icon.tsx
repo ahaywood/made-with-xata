@@ -5,8 +5,10 @@ import { Discord } from './Discord';
 import { Dots } from './Dots';
 import { Edit } from './Edit';
 import { Email } from './Email';
+import { Filter } from './Filter';
 import { GitHub } from './GitHub';
 import { LinkedIn } from './Linkedin';
+import { Search } from './Search';
 import { Twitter } from './Twitter';
 import { Upload } from './Upload';
 import { VerticalDots } from './VerticalDots';
@@ -33,10 +35,14 @@ const Icon = ({ height = 24, name, width = 24 }: IconProps) => {
       return <Edit height={height} width={width} />;
     case 'email':
       return <Email height={height} width={width} />;
+    case 'filter':
+      return <Filter height={height} width={width} />;
     case 'github':
       return <GitHub height={height} width={width} />;
     case 'linkedin':
       return <LinkedIn height={height} width={width} />;
+    case 'search':
+      return <Search height={height} width={width} />;
     case 'twitter':
       return <Twitter height={height} width={width} />;
     case 'upload':

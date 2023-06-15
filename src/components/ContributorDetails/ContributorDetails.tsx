@@ -19,13 +19,15 @@ const ContributorDetails = ({
   githubRepo,
 }: ContributorDetailsProps) => (
   <div className="flex gap-x-5 items-center">
-    <div>
-      <Avatar
-        alt="Queen Raae"
-        size={72}
-        src={getGitHubAvatar(getGitHubUsername(githubRepo))}
-      />
-    </div>
+    {githubRepo && (
+      <div>
+        <Avatar
+          alt={contributor.name}
+          size={72}
+          src={getGitHubAvatar(getGitHubUsername(githubRepo))}
+        />
+      </div>
+    )}
     {contributor.name && (
       <div>
         <h3 className="leading-none">Contributed By</h3>
