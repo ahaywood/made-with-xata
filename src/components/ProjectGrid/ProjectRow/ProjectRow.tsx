@@ -14,14 +14,13 @@ import { Spinner } from '@/components/Spinner';
 interface ProjectRowProps {
   deleteProject: (projectId: string) => void;
   project: Project;
-  tags?: Tag[];
 }
 
-const ProjectRow = ({ deleteProject, project, tags = [] }: ProjectRowProps) => {
+const ProjectRow = ({ deleteProject, project }: ProjectRowProps) => {
   const [isConfirmDeleteShowing, setIsConfirmDeleteShowing] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const { id, featured, slug, name, contributor, isApproved } = project;
+  const { id, featured, slug, name, contributor, isApproved, tags } = project;
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
@@ -38,8 +37,10 @@ const ProjectRow = ({ deleteProject, project, tags = [] }: ProjectRowProps) => {
 
   const handleDelete = () => {
     setIsDeleting(true);
-    deleteProject(id);
+    deleteProject(id as string);
   };
+
+  console.log({ project });
 
   return (
     <div className="bg-black admin-gallery-table relative items-center py-6 border-bunker border-b-2 project-row">
@@ -81,8 +82,8 @@ const ProjectRow = ({ deleteProject, project, tags = [] }: ProjectRowProps) => {
       <div className="relative">
         <div className="flex relative gap-x-4 overflow-x-auto pb-4 top-2 z-80 pr-12">
           {tags &&
-            tags.map((tag) => (
-              <Tag isXShowing={false} name={tag.name} key={tag.id} />
+            tags.map((tag, index) => (
+              <Tag isXShowing={false} name={tag} key={index} />
             ))}
         </div>
         <div className="absolute w-1/2 right-0 h-full bg-gradient-to-l from-black z-90 top-0 pointer-events-none" />
@@ -149,7 +150,7 @@ const ProjectRow = ({ deleteProject, project, tags = [] }: ProjectRowProps) => {
         createPortal(
           <SlideOutPanel defaultIsShowing={showModal} toggleModal={toggleModal}>
             <ProjectForm
-              toggleVisibility={() => {}}
+              toggleVisibility={toggleModal}
               state="edit"
               project={project}
             />

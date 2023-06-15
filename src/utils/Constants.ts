@@ -24,3 +24,19 @@ export const CONSTANTS = Object.freeze({
     PRIVACY_POLICY: 'https://xata.io/privacy',
   },
 });
+
+export const COLORS = Object.freeze({
+  alienArmpit: '#73d000',
+  malachite: '#00cc59',
+  munsellGreen: '#00c080',
+  tiffanyBlue: '#00bda6',
+  irisBlue: '#00bbd6',
+  vividCerulean: '#00a8eb',
+  blueDeFrance: '#3582f8',
+  veryLightBlue: '#6862f3',
+  lavenderBlue: '#9353f9',
+  lavender: '#b144fa',
+  phlox: '#e612f1',
+  fluorescentPink: '#f8149a',
+  folly: '#ff005d',
+});

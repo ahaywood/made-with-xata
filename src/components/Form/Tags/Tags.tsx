@@ -2,10 +2,10 @@ import { Tag } from '@/components/Tag';
 import { useState } from 'react';
 
 interface TagsProps {
-  tags: Tag[];
+  tags?: Tag[];
 }
 
-const Tags = ({ tags = [] }: /* props */ TagsProps) => {
+const Tags = ({ tags = [] }: TagsProps) => {
   const [input, setInput] = useState('');
   const [inputTags, setInputTags] = useState(tags);
 

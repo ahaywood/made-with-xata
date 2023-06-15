@@ -1,7 +1,10 @@
 // Reference: https://wunnle.com/dynamic-text-color-based-on-background
 
+import { COLORS } from './Constants';
+
 function getRGB(c: string | number): number {
-  return parseInt(c, 16) || c;
+  if (typeof c === 'number') return c;
+  return parseInt(c, 16);
 }
 
 function getsRGB(c: string | number) {
@@ -30,3 +33,9 @@ export function getTextColor(bgColor: string) {
 
   return whiteContrast > blackContrast ? '#ffffff' : '#000000';
 }
+
+export const randomAvatarColor = (): string => {
+  const colors = Object.keys(COLORS);
+  const randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
+};

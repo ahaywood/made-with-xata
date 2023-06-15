@@ -14,35 +14,14 @@ export default async function Admin() {
       'slug',
       'isApproved',
       'order',
+      'tags',
       'contributor.*',
     ])
     .getAll();
 
-  const tags = await xata.db.tag_project
-    .select(['projects.id', 'tags.name', 'tags.id'])
-    .getAll();
+  const approvedProjects = projects.filter((project) => project.isApproved);
 
-  // build a projects list, with tags
-  const projectsWithTags = projects.map((project) => {
-    // get this project's tags
-    const projectTags = tags.filter((tag) => tag.projects?.id === project.id);
-
-    // reformat my tags to match the shape of the Tag type
-    const myTags = projectTags.map((tag) => ({ ...tag.tags }));
-
-    return {
-      ...project,
-      tags: [...myTags],
-    };
-  });
-
-  const approvedProjects = projectsWithTags.filter(
-    (project) => project.isApproved
-  );
-
-  const unApprovedProjects = projectsWithTags.filter(
-    (project) => !project.isApproved
-  );
+  const unApprovedProjects = projects.filter((project) => !project.isApproved);
 
   return (
     <>

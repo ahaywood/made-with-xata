@@ -1,15 +1,15 @@
 interface Contributor {
   id?: string;
   name: string;
-  avatar: string;
-  avatarColor: ThemeColors;
+  avatar?: string;
+  avatarColor?: ThemeColors;
 }
 
 interface Project {
-  id: string;
-  name: string;
+  id?: string;
+  name?: string;
   isApproved?: boolean;
-  slug: string;
+  slug?: string;
   featured?: boolean;
   contributor?: Contributor;
   description?: string;
@@ -18,13 +18,8 @@ interface Project {
   featuredOnHomepage?: boolean;
   featuredInCarousel?: boolean;
   gitHubRepo?: string;
-  tags?: Tag[];
+  tags?: string[];
   projectUrl?: string;
-}
-
-interface Tag {
-  name: string;
-  id: string;
 }
 
 type ThemeColors =

@@ -65,18 +65,11 @@ const ProjectGrid = ({ isApproved = true, xataData }: ProjectGridProps) => {
           {orderedProjects.map((project) => {
             if (!project) return <li />;
 
-            // have to simplify the result coming back from Xata so I can pass it to a client component
-            const { contributor, tags, ...simplifiedProject } = project;
-
             return (
               <Reorder.Item key={project.id} value={project}>
                 <ProjectRow
                   key={project.id}
-                  project={{
-                    ...simplifiedProject,
-                    contributor: { ...(contributor as Contributor) },
-                  }}
-                  tags={tags}
+                  project={project}
                   deleteProject={deleteProject}
                 />
               </Reorder.Item>
