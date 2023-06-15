@@ -3,6 +3,7 @@ import { Tags } from '@/components/Form/Tags';
 import { Submit } from '@/components/Form/Submit';
 import { useForm } from 'react-hook-form';
 import { Toggle } from '@/components/Toggle';
+import { addProject, editProject } from '@/app/actions';
 
 interface ProjectFormProps {
   project?: Project;
@@ -21,17 +22,13 @@ const ProjectForm = ({
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    fetch('/api/project', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    })
-      .then((res) => {
-        // res.json();
-        console.log(res);
-        toggleVisibility();
-      })
-      .catch((err) => console.error(err));
+  const onSubmit = (data: Project & { contributorName?: string }) => {
+    if (state === 'add') {
+      addProject(data);
+    } else if (state === 'edit') {
+      editProject(data);
+    }
+    // toggleVisibility();
   };
 
   return (
@@ -40,6 +37,7 @@ const ProjectForm = ({
         {state === 'add' ? 'Add' : 'Edit'} a Project
       </div>
       <form onSubmit={handleSubmit(onSubmit)}>
+        {project?.id && <input type="hidden" name="id" value={project.id} />}
         <div className="field">
           <Toggle
             label="Featured in the Carousel"
@@ -55,11 +53,11 @@ const ProjectForm = ({
           />
         </div>
         <div className="field">
-          <label htmlFor="projectName">Project Name</label>
+          <label htmlFor="name">Project Name</label>
           <input
             type="text"
-            id="projectName"
-            {...register('projectName', { required: true })}
+            id="name"
+            {...register('name', { required: true })}
           />
         </div>
         <div className="field">
@@ -79,16 +77,20 @@ const ProjectForm = ({
           />
         </div>
         <div className="field">
-          <label htmlFor="github">Project on GitHub</label>
+          <label htmlFor="gitHubRepo">Project on GitHub</label>
           <input
             type="url"
-            id="github"
-            {...register('github', { required: true })}
+            id="gitHubRepo"
+            {...register('gitHubRepo', { required: true })}
           />
         </div>
         <div className="field">
-          <label htmlFor="url">Project URL</label>
-          <input type="url" id="url" {...register('url', { required: true })} />
+          <label htmlFor="projectUrl">Project URL</label>
+          <input
+            type="url"
+            id="projectUrl"
+            {...register('projectUrl', { required: true })}
+          />
         </div>
 
         <div className="field">
