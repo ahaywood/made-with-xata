@@ -1,0 +1,13 @@
+{
+  "id": "mig_cghfipp5ng00drlrk070",
+  "parentID": "mig_cghfim15ng00drlrjvo0",
+  "checksum": "1:d68084d3a07c0d687f7e04b937b7cf84427b8b31f3aeeb2aabe1a1c70e541beb",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "tags",
+        "table": "project"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "mig_ci5oiv5f18t4cagiar40",
+  "parentID": "mig_ci5oiujebnk315ar2amg",
+  "checksum": "1:9c1e3cc10b17efba7077c849e12a848516b8fd08ebeb2ea384e94d23ca22873e",
+  "operations": [
+    {
+      "removeTable": {
+        "table": "avatarcolor"
+      }
+    }
+  ]
+}

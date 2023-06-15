@@ -1,0 +1,19 @@
+{
+  "id": "mig_cgerf5bbn0hsnabgt05g",
+  "parentID": "mig_cgehgi85o34u7hhdd1ng",
+  "checksum": "1:1fc08204052c390841e2bf3426b8f1d6d978a1d2f136dae5e5b14eb21e64baac",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "contributorId",
+          "type": "link",
+          "link": {
+            "table": "contributor"
+          }
+        },
+        "table": "project"
+      }
+    }
+  ]
+}

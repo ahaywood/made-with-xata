@@ -1,0 +1,13 @@
+{
+  "id": "mig_cghfiv15ng00drlrk080",
+  "parentID": "mig_cghfipp5ng00drlrk070",
+  "checksum": "1:22996fbfd0eb2c68fcb3b727e4b501d999a0dd26c0279e593ec8eedd524127f8",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "tag",
+        "oldName": "tags"
+      }
+    }
+  ]
+}

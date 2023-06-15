@@ -1,0 +1,13 @@
+{
+  "id": "mig_ci58bk1t6anienceohf0",
+  "parentID": "mig_ci58beht6anienceohe0",
+  "checksum": "1:afb76976eab611eafa852eaa4b8af9391e329d11e1f5e611500ee1f23d0b9ea4",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "avatarColor",
+        "table": "nextauth_users"
+      }
+    }
+  ]
+}

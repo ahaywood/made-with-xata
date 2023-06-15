@@ -1,0 +1,17 @@
+{
+  "id": "mig_cgk17vejdeeu8v7jkjdg",
+  "parentID": "mig_cgk17rfal8dqlg8tlp80",
+  "checksum": "1:a113ff5870da8b19aa95602d99edfce9a88a6e395d9033c9670df885eed48fad",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "featuredInCarousel",
+          "type": "bool",
+          "defaultValue": "false"
+        },
+        "table": "project"
+      }
+    }
+  ]
+}

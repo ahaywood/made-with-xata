@@ -1,0 +1,16 @@
+{
+  "id": "mig_cgehfig5o34u7hhdd1mg",
+  "parentID": "mig_cgehfc5821asf4mlikfg",
+  "checksum": "1:e79385bac63ffeb17ba5ef82bfec90a5b73dae54da49514f424f1b6b81990346",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "isApproved",
+          "type": "bool"
+        },
+        "table": "project"
+      }
+    }
+  ]
+}

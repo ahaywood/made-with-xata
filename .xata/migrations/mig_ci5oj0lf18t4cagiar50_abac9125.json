@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci5oj0lf18t4cagiar50",
+  "parentID": "mig_ci5oiv5f18t4cagiar40",
+  "checksum": "1:abac91258e72d894f621f9de09a01ff0733824720eabd6230ceae6765358fc1f",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "avatarColor",
+          "type": "string"
+        },
+        "table": "user"
+      }
+    }
+  ]
+}

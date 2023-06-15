@@ -1,0 +1,14 @@
+{
+  "id": "mig_cgk17rfal8dqlg8tlp80",
+  "parentID": "mig_cgibj0c5gt5fsg9j6b9g",
+  "checksum": "1:34a143e27c99d7930e5198fa87a6a6a895d926f8b1f1db40625b82c58c43c2cd",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "featuredOnHomepage",
+        "oldName": "featured",
+        "table": "project"
+      }
+    }
+  ]
+}

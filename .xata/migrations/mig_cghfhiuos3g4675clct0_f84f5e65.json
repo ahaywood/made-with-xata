@@ -1,0 +1,16 @@
+{
+  "id": "mig_cghfhiuos3g4675clct0",
+  "parentID": "mig_cgerf5bbn0hsnabgt05g",
+  "checksum": "1:f84f5e65263801eebb05b099dbb6d9605d51b114df8c43515e1b8974cce3946e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "featuredImage",
+          "type": "string"
+        },
+        "table": "project"
+      }
+    }
+  ]
+}

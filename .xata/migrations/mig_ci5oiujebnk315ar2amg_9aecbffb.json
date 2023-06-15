@@ -1,0 +1,13 @@
+{
+  "id": "mig_ci5oiujebnk315ar2amg",
+  "parentID": "mig_ci5jjmlf18t4cagiahp0",
+  "checksum": "1:9aecbffb9d271ebfc4c492e4510fe4aa30b4be8b4e1070c497d928092b352fe6",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "avatarColor",
+        "table": "user"
+      }
+    }
+  ]
+}

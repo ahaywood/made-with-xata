@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci5plfdv8omvr5sqr9mg",
+  "parentID": "mig_ci5oj0lf18t4cagiar50",
+  "checksum": "1:ecc578f46bc8bc908d87d74e07286084f8c2161c2dec5a6a642f47d3888bf9e1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "tags",
+          "type": "multiple"
+        },
+        "table": "project"
+      }
+    }
+  ]
+}

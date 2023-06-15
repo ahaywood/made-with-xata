@@ -1,0 +1,12 @@
+{
+  "id": "mig_ci58doht6anienceoi4g",
+  "parentID": "mig_ci58dmh12086bm0po7ig",
+  "checksum": "1:000f6816cfb6af6a2a3fad0041bd6ad93dd6e20a199359e45cad62c486c74278",
+  "operations": [
+    {
+      "addTable": {
+        "table": "nextauth_verificationTokens"
+      }
+    }
+  ]
+}

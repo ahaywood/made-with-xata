@@ -1,0 +1,16 @@
+{
+  "id": "mig_cgehgi85o34u7hhdd1ng",
+  "parentID": "mig_cgehgff1r0no79l4qat0",
+  "checksum": "1:7de6eb0839c74a99921aad356d7134ed54857288bb3da35099661fd84217be45",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "name",
+          "type": "string"
+        },
+        "table": "contributor"
+      }
+    }
+  ]
+}

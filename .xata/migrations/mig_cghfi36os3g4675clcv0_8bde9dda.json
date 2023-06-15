@@ -1,0 +1,16 @@
+{
+  "id": "mig_cghfi36os3g4675clcv0",
+  "parentID": "mig_cghfhu15ng00drlrjvjg",
+  "checksum": "1:8bde9dda5dec3aa09b5ea93d3d7f19fa63332144f1dbbe7f95bc4f4ee6b3b43b",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "gitHubRepo",
+          "type": "string"
+        },
+        "table": "project"
+      }
+    }
+  ]
+}

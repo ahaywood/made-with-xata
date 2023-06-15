@@ -1,0 +1,14 @@
+{
+  "id": "mig_cgiavns5gt5fsg9j5kg0",
+  "parentID": "mig_cgiaub45gt5fsg9j5kf0",
+  "checksum": "1:a396cf6e121cc19c1feaed488d8611e543b4b21ef894a9d691ed63f85646510c",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "contributor",
+        "oldName": "contributorId",
+        "table": "project"
+      }
+    }
+  ]
+}

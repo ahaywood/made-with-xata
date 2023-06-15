@@ -1,0 +1,19 @@
+{
+  "id": "mig_cgiau0c5gt5fsg9j5kd0",
+  "parentID": "mig_cgiarhs5gt5fsg9j5k6g",
+  "checksum": "1:153858684e098e68b16ac9def68577ceb3188bcb3abb291ea88de26e090388d4",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "tags",
+          "type": "link",
+          "link": {
+            "table": "tag"
+          }
+        },
+        "table": "tag_project"
+      }
+    }
+  ]
+}
