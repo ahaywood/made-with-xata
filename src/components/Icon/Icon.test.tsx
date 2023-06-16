@@ -125,6 +125,19 @@ describe('Icon', () => {
     });
   });
 
+  describe('Hazard Icon', () => {
+    it('rendering the hazard icon', () => {
+      render(<Icon name="hazard" />);
+      expect(screen.getByTestId('hazardIcon')).toBeInTheDocument();
+    });
+
+    it('renders correctly', () => {
+      expect(() => {
+        render(<Icon name="hazard" />);
+      }).toMatchSnapshot();
+    });
+  });
+
   describe('LinkedIn Icon', () => {
     it('rendering the linkedin icon', () => {
       render(<Icon name="linkedin" />);

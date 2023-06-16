@@ -7,6 +7,7 @@ import { Edit } from './Edit';
 import { Email } from './Email';
 import { Filter } from './Filter';
 import { GitHub } from './GitHub';
+import { Hazard } from './Hazard';
 import { LinkedIn } from './Linkedin';
 import { Search } from './Search';
 import { Twitter } from './Twitter';
@@ -39,6 +40,8 @@ const Icon = ({ height = 24, name, width = 24 }: IconProps) => {
       return <Filter height={height} width={width} />;
     case 'github':
       return <GitHub height={height} width={width} />;
+    case 'hazard':
+      return <Hazard height={height} width={width} />;
     case 'linkedin':
       return <LinkedIn height={height} width={width} />;
     case 'search':

@@ -57,6 +57,12 @@ export const Github: Story = {
   },
 };
 
+export const Hazard: Story = {
+  args: {
+    name: 'Hazard',
+  },
+};
+
 export const LinkedIn: Story = {
   args: {
     name: 'LinkedIn',
