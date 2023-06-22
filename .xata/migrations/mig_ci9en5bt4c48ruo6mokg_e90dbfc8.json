@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci9en5bt4c48ruo6mokg",
+  "parentID": "mig_ci9en3bt4c48ruo6mojg",
+  "checksum": "1:e90dbfc8b10395823f4cf629555a9a59fd950c75418abec235734b8f9ff2eb73",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "latitude",
+          "type": "string"
+        },
+        "table": "session"
+      }
+    }
+  ]
+}

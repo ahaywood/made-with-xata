@@ -1,0 +1,12 @@
+{
+  "id": "mig_ci9pognc9likdsqc39fg",
+  "parentID": "mig_ci9eqkevs04m656va150",
+  "checksum": "1:dd1f26d0b254a31463917ae24b5be00550c0d5f435a8550e838d572dd77dbe0d",
+  "operations": [
+    {
+      "removeTable": {
+        "table": "tag_project"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci9en9jt4c48ruo6mong",
+  "parentID": "mig_ci9en81k788ra8seqv4g",
+  "checksum": "1:73f5387ce83c7291b36259076543eb260888a8bc30c703596856167cc179095e",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "browser",
+          "type": "string"
+        },
+        "table": "session"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci9en0bt4c48ruo6mohg",
+  "parentID": "mig_ci9emrbt4c48ruo6mogg",
+  "checksum": "1:a8626838552c73618182e74c480ac6bed14f6e9529aa460afaaa5575b2db43bd",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "city",
+          "type": "string"
+        },
+        "table": "session"
+      }
+    }
+  ]
+}

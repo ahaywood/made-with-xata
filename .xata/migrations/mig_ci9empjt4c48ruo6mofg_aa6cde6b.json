@@ -1,0 +1,13 @@
+{
+  "id": "mig_ci9empjt4c48ruo6mofg",
+  "parentID": "mig_ci9emkbt4c48ruo6moeg",
+  "checksum": "1:aa6cde6b20217f54013830ec79cac1a0b941354fdeecd1afe8889f2d387f485f",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "session",
+        "oldName": "user_session"
+      }
+    }
+  ]
+}

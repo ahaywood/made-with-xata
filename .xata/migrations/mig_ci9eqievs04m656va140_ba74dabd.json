@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci9eqievs04m656va140",
+  "parentID": "mig_ci9eq8jt4c48ruo6mqa0",
+  "checksum": "1:ba74dabdca698bfd7b4fb3ba83a94b94691ade9b3c521b493ca53f1c8f839f74",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "longitude",
+          "type": "string"
+        },
+        "table": "session"
+      }
+    }
+  ]
+}

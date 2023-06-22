@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci9emrbt4c48ruo6mogg",
+  "parentID": "mig_ci9empjt4c48ruo6mofg",
+  "checksum": "1:d521093b30e2d1ce9478dc534ee55b4bd8a126d3d63543933c4221693598c8fc",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "ip",
+          "type": "string"
+        },
+        "table": "session"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci9en81k788ra8seqv4g",
+  "parentID": "mig_ci9en6jt4c48ruo6molg",
+  "checksum": "1:ac8d3f94e38a1228d6a375b092c648dfd2dd22fdb6674eb1a46f43d217ee1610",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "device",
+          "type": "string"
+        },
+        "table": "session"
+      }
+    }
+  ]
+}

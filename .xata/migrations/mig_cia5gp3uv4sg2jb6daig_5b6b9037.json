@@ -1,0 +1,17 @@
+{
+  "id": "mig_cia5gp3uv4sg2jb6daig",
+  "parentID": "mig_ci9pohkp8dgrn0utvg70",
+  "checksum": "1:5b6b90372eb195b6c5869008f79e731ff613aabac30c1ca24ea52eef6f23ead5",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "isApproved",
+          "type": "bool",
+          "defaultValue": "false"
+        },
+        "table": "user"
+      }
+    }
+  ]
+}

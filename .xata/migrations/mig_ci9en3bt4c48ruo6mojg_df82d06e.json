@@ -1,0 +1,16 @@
+{
+  "id": "mig_ci9en3bt4c48ruo6mojg",
+  "parentID": "mig_ci9en1rt4c48ruo6moig",
+  "checksum": "1:df82d06eb1bda4c9ee607fcc786e40e1f0e2fd7fe8553e8a5b30f45e11aa10b3",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "region",
+          "type": "string"
+        },
+        "table": "session"
+      }
+    }
+  ]
+}
