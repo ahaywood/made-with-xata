@@ -19,11 +19,11 @@ const FeaturedScreenshot = ({ featuredImages }: FeaturedScreenshotProps) => {
       <div className="col-start-3 col-span-8" data-testid="featured">
         {featuredImages[featuredScreenshot]?.src && (
           <Browser
-            alt={
+            name={
               featuredImages[featuredScreenshot]?.alt &&
               featuredImages[featuredScreenshot].alt
             }
-            src={featuredImages[featuredScreenshot].src}
+            featuredImage={featuredImages[featuredScreenshot].src}
             width={815}
             height={544}
           />

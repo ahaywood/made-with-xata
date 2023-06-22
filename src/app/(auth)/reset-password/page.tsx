@@ -1,6 +1,10 @@
 import { Submit } from '@/components/Form/Submit';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Reset Password | Made with Xata',
+};
+
 export default function ResetPassword() {
   return (
     <form className="form">

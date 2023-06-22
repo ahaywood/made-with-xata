@@ -13,7 +13,7 @@ export default function Add() {
     description: 'lorem ipsum',
     featured: false,
     featuredImage: '',
-    additionalImages: [],
+    additionalImages: '',
     projectUrl: 'https://example.com',
     gitHubRepo: 'http://github.com',
     contributor: {
@@ -22,7 +22,7 @@ export default function Add() {
       avatarColor: 'alienArmpit',
       email: 'something@example.com",',
     },
-    tags: [{ name: 'Tailwind', id: '1' }],
+    tags: ['Tailwind', 'React', 'Next.js'],
   });
 
   const updateForm = (updatedProject: Project) => {

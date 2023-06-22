@@ -16,10 +16,7 @@ export const projects = [
     featuredImage: 'https://picsum.photos/seed/1686775733168/300/300.jpg',
     gitHubRepo: 'http://github.com',
     projectUrl: 'http://google.com',
-    tags: [
-      { id: '1', name: 'Gatsby' },
-      { id: '2', name: 'Tailwind' },
-    ],
+    tags: ['Gatsby', 'Tailwind'],
   },
   {
     id: '2',
@@ -32,10 +29,7 @@ export const projects = [
       avatar: 'https://i.pravatar.cc/150?img=65',
       avatarColor: 'folly',
     },
-    tags: [
-      { id: '1', name: 'Next.js' },
-      { id: '2', name: 'Tailwind' },
-    ],
+    tags: ['Next.js', 'Tailwind'],
   },
   {
     id: '3',
@@ -48,9 +42,6 @@ export const projects = [
       avatar: 'https://i.pravatar.cc/150?img=64',
       avatarColor: 'folly',
     },
-    tags: [
-      { id: '1', name: 'Remix' },
-      { id: '2', name: 'Styled Components' },
-    ],
+    tags: ['Remix', 'Styled Components'],
   },
 ] as Project[];

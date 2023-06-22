@@ -1,8 +1,6 @@
 'use client';
 
-import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { debug } from 'console';
+import { render, screen } from '@testing-library/react';
 import { ProjectRow } from './ProjectRow';
 
 describe('ProjectRow', () => {
@@ -64,10 +62,7 @@ describe('ProjectRow', () => {
         deleteProject={() => {}}
         project={{
           ...project,
-          tags: [
-            { id: '1', name: 'Gatsby' },
-            { id: '2', name: 'Tailwind' },
-          ],
+          tags: ['Gatsby', 'Tailwind'],
         }}
       />
     );

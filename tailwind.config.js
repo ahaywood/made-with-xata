@@ -55,7 +55,8 @@ module.exports = {
         adminGalleryTable: '48px',
       },
       gridTemplateColumns: {
-        adminGalleryTable: '66px minMax(0, 1fr) 185px 300px 80px',
+        adminGalleryTable: '66px 66px minMax(0, 1fr) 185px 300px 80px',
+        adminUserTable: '66px 66px minMax(0, 1fr) minMax(0, 1fr) 80px',
       },
       maxWidth: {
         pageWidth: '1240px',

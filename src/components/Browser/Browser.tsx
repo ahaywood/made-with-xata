@@ -6,14 +6,20 @@ import { useEffect, useRef, useState } from 'react';
 
 /* eslint-disable @next/next/no-img-element */
 export interface BrowserProps {
-  alt: string;
-  link?: string;
-  src: string;
+  name: string;
+  slug?: string;
+  featuredImage: string;
   width: number;
   height: number;
 }
 
-const Browser = ({ alt, height, link = '', src, width }: BrowserProps) => {
+const Browser = ({
+  name,
+  height,
+  slug = '',
+  featuredImage,
+  width,
+}: BrowserProps) => {
   const imageRef = useRef<HTMLImageElement>(null);
   const [scrollHeight, setScrollHeight] = useState(0);
 
@@ -33,40 +39,53 @@ const Browser = ({ alt, height, link = '', src, width }: BrowserProps) => {
         style={{ width: `${width}px`, height: `${height}px` }}
         data-testid="browserComponent"
       >
-        {link ? (
-          <Link href="#">
-            <motion.img
-              whileHover={{
-                y: -scrollHeight,
-                transition: {
-                  duration: (scrollHeight / height) * 3,
-                  ease: [0.34, 0.12, 0.6, 1.1],
-                },
-              }}
-              ref={imageRef}
-              alt={alt}
-              src={src}
-              className="w-full drop-shadow-browser"
+        {slug ? (
+          <Link href={`/${slug}`}>
+            <BrowserImage
+              imageRef={imageRef}
+              name={name}
+              featuredImage={featuredImage}
+              scrollHeight={scrollHeight}
+              height={height}
             />
           </Link>
         ) : (
-          <motion.img
-            whileHover={{
-              y: -scrollHeight,
-              transition: {
-                duration: (scrollHeight / height) * 3,
-                ease: [0.34, 0.12, 0.6, 1.1],
-              },
-            }}
-            ref={imageRef}
-            alt={alt}
-            src={src}
-            className="w-full drop-shadow-browser"
+          <BrowserImage
+            imageRef={imageRef}
+            name={name}
+            featuredImage={featuredImage}
+            scrollHeight={scrollHeight}
+            height={height}
           />
         )}
       </div>
     </div>
   );
 };
+
+const BrowserImage = ({
+  imageRef,
+  name,
+  featuredImage,
+  scrollHeight,
+  height,
+}: Omit<BrowserProps, 'width' | 'slug'> & {
+  imageRef: React.MutableRefObject<HTMLImageElement | null>;
+  scrollHeight: number;
+}) => (
+  <motion.img
+    whileHover={{
+      y: -scrollHeight,
+      transition: {
+        duration: (scrollHeight / height) * 3,
+        ease: [0.34, 0.12, 0.6, 1.1],
+      },
+    }}
+    ref={imageRef}
+    alt={name}
+    src={featuredImage}
+    className="w-full drop-shadow-browser"
+  />
+);
 
 export { Browser };

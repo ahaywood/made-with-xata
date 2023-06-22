@@ -16,7 +16,7 @@ const AddProjectForm = ({ updateForm = () => {} }: AddProjectFormProps) => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: Project) => {
     console.log(data);
   };
 
@@ -73,6 +73,7 @@ const AddProjectForm = ({ updateForm = () => {} }: AddProjectFormProps) => {
           {errors.projectUrl && <span>This field is required</span>}
         </div>
 
+        {/* TODO: Swap out Upload Field */}
         <div className="field">
           <label htmlFor="uploadImage">Featured Image</label>
           <input
@@ -103,6 +104,7 @@ const AddProjectForm = ({ updateForm = () => {} }: AddProjectFormProps) => {
 
         <div className="field">
           <label htmlFor="tags">Tags</label>
+          {/* TODO: Swap out form Tag Input Field */}
           <input type="text" {...register('tags')} />
         </div>
 

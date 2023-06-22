@@ -1,5 +1,9 @@
 import { Header } from '@/components/Header/Header';
 
+export const metadata = {
+  title: 'Thanks | Made with Xata',
+};
+
 export default function Thanks() {
   return (
     <>

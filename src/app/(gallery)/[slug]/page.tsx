@@ -16,6 +16,10 @@ type PageContext = {
 
 const xata = getXataClient();
 
+export const metadata = {
+  title: 'Project | Made with Xata',
+};
+
 const IndividualItem = async (context: PageContext) => {
   const slug: string = context?.params?.slug;
 
@@ -25,11 +29,7 @@ const IndividualItem = async (context: PageContext) => {
     .select(['*', 'contributor.*'])
     .getAll();
 
-  // get the tags for the featured project
-  const tags = await xata.db.tag_project
-    .filter('projects.id', project[0]?.id)
-    .select(['tags.name', 'tags.id'])
-    .getAll();
+  console.log(project);
 
   // get the additional projects
   const additionalProjects = await xata.db.project
@@ -42,6 +42,7 @@ const IndividualItem = async (context: PageContext) => {
       'gitHubRepo',
       'featuredImage',
       'additionalImages',
+      'tags',
     ])
     .getPaginated({
       pagination: {
@@ -98,16 +99,12 @@ const IndividualItem = async (context: PageContext) => {
             />
           </div>
 
-          {tags && (
+          {project[0]?.tags && (
             <div>
               <h3>Tagged As</h3>
               <div className="flex flex-wrap gap-4">
-                {tags.map((tag) => (
-                  <Tag
-                    key={tag.id}
-                    name={tag?.tags?.name as string}
-                    isXShowing={false}
-                  />
+                {project[0].tags.map((tag, index) => (
+                  <Tag key={index} name={tag} isXShowing={false} />
                 ))}
               </div>
             </div>

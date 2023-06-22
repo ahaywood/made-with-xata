@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Browser, type BrowserProps } from '../Browser/Browser';
 
 interface BrowserSliderProps {
-  slides: (BrowserProps & { slug: string })[];
+  slides: (Omit<BrowserProps, 'width' | 'height'> & { slug: string })[];
 }
 
 const BrowserSlider = ({ slides }: BrowserSliderProps) => (
@@ -10,6 +10,7 @@ const BrowserSlider = ({ slides }: BrowserSliderProps) => (
     {slides.map((slide, index: number) => (
       <div className="snap-center" key={index}>
         <Link href={slide.slug}>
+          {/* TODO: Add width and height to the props */}
           <Browser key={index} {...slide} />
         </Link>
       </div>

@@ -2,6 +2,7 @@ interface Contributor {
   id?: string;
   name: string;
   avatar?: string;
+  email?: string;
   avatarColor?: ThemeColors;
 }
 
@@ -38,9 +39,18 @@ type ThemeColors =
   | 'folly';
 
 interface User {
+  id?: string;
   name?: string;
-  email: string;
+  email?: string;
   avatar?: string;
   avatarColor?: ThemeColors;
   password?: string;
+  sessions?: Session;
+  verifiedEmail?: boolean;
+  isApproved?: boolean;
+}
+
+interface Session {
+  id?: string;
+  session?: string;
 }

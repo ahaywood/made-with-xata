@@ -1,5 +1,6 @@
 import { Footer } from '@/components/Footer';
 import { LoggedInBar } from '@/components/LoggedInBar';
+import { cookies } from 'next/headers';
 
 import '../globals.css';
 import '../../tailwind.css';
@@ -14,19 +15,25 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // check for access token
+  const accessToken = cookies().get('accessToken');
+
   return (
     <html lang="en">
       <body>
         {children}
-        <LoggedInBar
-          buttonLabel="Edit"
-          buttonLink="#"
-          user={{
-            name: 'John Doe',
-            avatar: '',
-            avatarColor: 'alienArmpit',
-          }}
-        />
+        {accessToken && (
+          <LoggedInBar
+            buttonLabel="Edit"
+            buttonLink="#"
+            user={{
+              name: 'John Doe',
+              email: 'amy@ahhacreative.com',
+              avatar: '',
+              avatarColor: 'alienArmpit',
+            }}
+          />
+        )}
         <Footer />
       </body>
     </html>

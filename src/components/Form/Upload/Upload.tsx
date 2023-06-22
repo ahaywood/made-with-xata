@@ -44,7 +44,7 @@ const Upload = ({ multiple = true }: UploadProps) => {
 
   return (
     <div
-      className={`upload-label border-b-white hover:border-b-uclaGold hover:text-uclaGold border-dashed border-2 rounded-[4px] center p-4 gap-2 relative flex items-center justify-center gap-x-2 text-sm cursor-pointer ${
+      className={`upload-label border-b-white hover:border-b-uclaGold hover:text-uclaGold border-dashed border-2 rounded-[4px] p-4 gap-2 relative flex items-center justify-center gap-x-4 text-sm cursor-pointer ${
         isHighlightShowing ? 'border-b-uclaGold text-uclaGold' : ''
       }`}
       onDrop={handleDrop}
@@ -54,7 +54,9 @@ const Upload = ({ multiple = true }: UploadProps) => {
       onDragExit={removeHighlight}
     >
       <Icon name="upload" />
-      <p>Select a File on your Computer or Drag and Drop here.</p>
+      <p>
+        <u>Select a File</u> or Drag and Drop files here.
+      </p>
       <input
         type="file"
         name="upload"

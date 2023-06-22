@@ -7,9 +7,15 @@ import { getXataClient } from '@/xata';
 
 const xata = getXataClient();
 
+export const metadata = {
+  title: 'Gallery | Made with Xata',
+};
+
 export default async function Home() {
   const projects = await xata.db.project.filter('isApproved', true).getAll();
-  // const featuredProjects = projects.filter((project) => project.featured);
+  const featuredProjects = projects.filter(
+    (project) => project.featuredInCarousel
+  );
 
   return (
     <div className="gradient">
@@ -23,7 +29,7 @@ export default async function Home() {
       </div>
 
       <div className="mb-24">
-        <BrowserSlider slides={slides} />
+        <BrowserSlider slides={featuredProjects} />
       </div>
 
       <div className="page mb-36">

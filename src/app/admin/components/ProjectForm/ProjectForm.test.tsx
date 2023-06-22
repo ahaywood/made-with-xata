@@ -1,10 +1,15 @@
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import { Suspense } from 'react';
 import { ProjectForm } from './ProjectForm';
 
 describe('ProjectForm', () => {
   it('renders correctly', () => {
     expect(() => {
-      render(<ProjectForm />);
+      render(
+        <Suspense>
+          <ProjectForm toggleVisibility={() => {}} />
+        </Suspense>
+      );
     }).not.toThrow();
   });
 });

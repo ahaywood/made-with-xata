@@ -1,5 +1,7 @@
 'use client';
 
+// TODO: Connect Edit Project Form
+
 import { Icon } from '@/components/Icon';
 import { Tag } from '@/components/Tag';
 import { Avatar } from '@/components/Avatar';
@@ -19,9 +21,18 @@ interface ProjectRowProps {
 const ProjectRow = ({ deleteProject, project }: ProjectRowProps) => {
   const [isConfirmDeleteShowing, setIsConfirmDeleteShowing] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-
-  const { id, featured, slug, name, contributor, isApproved, tags } = project;
   const [showModal, setShowModal] = useState(false);
+
+  const {
+    id,
+    slug,
+    name,
+    contributor,
+    isApproved,
+    tags,
+    featuredInCarousel,
+    featuredOnHomepage,
+  } = project;
 
   const toggleModal = () => {
     setShowModal((prevValue) => !prevValue);
@@ -40,8 +51,6 @@ const ProjectRow = ({ deleteProject, project }: ProjectRowProps) => {
     deleteProject(id as string);
   };
 
-  console.log({ project });
-
   return (
     <div className="bg-black admin-gallery-table relative items-center py-6 border-bunker border-b-2 project-row">
       <div className="absolute -left-8 drag-drop-handle pr-6 py-6">
@@ -50,8 +59,11 @@ const ProjectRow = ({ deleteProject, project }: ProjectRowProps) => {
           <Icon name="verticalDots" />
         </button>
       </div>
-      <div className="text-selectiveYellow">
-        {featured && <Icon name="check" width={32} height={32} />}
+      <div className="text-selectiveYellow flex justify-center">
+        {featuredInCarousel && <Icon name="check" width={32} height={32} />}
+      </div>
+      <div className="text-selectiveYellow flex justify-center">
+        {featuredOnHomepage && <Icon name="check" width={32} height={32} />}
       </div>
       <div className="text-xl font-bold">
         {slug ? (

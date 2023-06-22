@@ -17,8 +17,8 @@ type Story = StoryObj<typeof Browser>;
 
 export const Primary: Story = {
   args: {
-    alt: 'A cute kitten',
-    src: 'http://placekitten.com/1080/1080',
+    name: 'A cute kitten',
+    featuredImage: 'http://placekitten.com/1080/1080',
     width: 1080,
     height: 720,
   },

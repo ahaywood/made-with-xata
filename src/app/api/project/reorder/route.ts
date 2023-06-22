@@ -6,7 +6,7 @@ export async function POST(req: Request) {
   // loop over array and update the order for each
   const xata = getXataClient();
   data.map(async (item, index) => {
-    await xata.db.project.update(item.id, {
+    await xata.db.project.update(item.id as string, {
       order: index,
     });
   });

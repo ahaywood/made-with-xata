@@ -16,16 +16,18 @@ export default meta;
 type Story = StoryObj<typeof Toggle>;
 export const Checked: Story = {
   args: {
-    defaultChecked: false,
-    name: 'yolo',
+    value: false,
+    id: 'yolo',
+    onChange: () => {},
     label: 'Yolo',
   },
 };
 
 export const Unchecked: Story = {
   args: {
-    defaultChecked: true,
-    name: 'yolo',
+    value: true,
+    id: 'yolo',
+    onChange: () => {},
     label: 'Yolo',
   },
 };

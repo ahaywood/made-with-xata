@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Error } from './Error';
+import { ErrorMessage } from './ErrorMessage';
 
-const meta: Meta<typeof Error> = {
+const meta: Meta<typeof ErrorMessage> = {
   title: 'Shared/Error',
-  component: Error,
+  component: ErrorMessage,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/7.0/react/writing-docs/docs-page
   tags: ['autodocs'],
   parameters: {
@@ -13,7 +13,7 @@ const meta: Meta<typeof Error> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof Error>;
+type Story = StoryObj<typeof ErrorMessage>;
 
 export const Primary: Story = {
   args: {

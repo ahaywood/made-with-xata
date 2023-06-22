@@ -1,14 +1,14 @@
 import { Icon } from '../Icon';
 
-interface ErrorProps {
+interface ErrorMessageProps {
   message: string;
 }
 
-const Error = ({ message }: ErrorProps) => (
+const ErrorMessage = ({ message }: ErrorMessageProps) => (
   <div className="error">
     <Icon name="hazard" />
     {message}
   </div>
 );
 
-export { Error };
+export { ErrorMessage };

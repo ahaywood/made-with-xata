@@ -11,6 +11,6 @@ describe('AccountNav', () => {
 
   it('renders the user name', () => {
     render(<AccountNav user={user} />);
-    expect(screen.getByText(user.name)).toBeInTheDocument();
+    expect(screen.getByText(user.name as string)).toBeInTheDocument();
   });
 });

@@ -18,6 +18,8 @@ exports[`Icon Filter Icon renders correctly 1`] = `[Function]`;
 
 exports[`Icon GitHub Icon renders correctly 1`] = `[Function]`;
 
+exports[`Icon Hazard Icon renders correctly 1`] = `[Function]`;
+
 exports[`Icon LinkedIn Icon renders correctly 1`] = `[Function]`;
 
 exports[`Icon Search Icon renders correctly 1`] = `[Function]`;

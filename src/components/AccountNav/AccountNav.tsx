@@ -1,15 +1,21 @@
+'use client';
+
 import Link from 'next/link';
 import { Avatar } from '../Avatar';
 
 interface AccountNavProps {
+  handleAccountClick?: () => void;
   user: {
-    name: string;
-    avatar: string;
-    avatarColor: ThemeColors;
+    name?: string;
+    avatar?: string;
+    avatarColor?: ThemeColors;
   };
 }
 
-const AccountNav = ({ user }: /* props */ AccountNavProps) => (
+const AccountNav = ({
+  handleAccountClick = () => {},
+  user,
+}: /* props */ AccountNavProps) => (
   <div className="flex gap-x-4 items-center">
     <div>
       <Avatar
@@ -20,11 +26,12 @@ const AccountNav = ({ user }: /* props */ AccountNavProps) => (
       />
     </div>
     <div>
-      <div className="font-bold text-lg leading-none">{user.name}</div>
-      <Link
-        href="#"
-        className="text-gray text-sm hover:underline hover:text-white"
-      >
+      <div className="font-bold text-lg leading-none hover:text-uclaGold">
+        <button type="button" onClick={handleAccountClick}>
+          {user.name}
+        </button>
+      </div>
+      <Link href="/logout" className="text-gray text-sm hover:text-uclaGold">
         Logout
       </Link>
     </div>

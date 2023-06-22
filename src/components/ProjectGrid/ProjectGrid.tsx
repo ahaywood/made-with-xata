@@ -2,8 +2,9 @@
 
 import { Reorder } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { removeProject } from '@/app/actions';
+import { removeProject } from '@/actions/projects';
 import { ProjectRow } from './ProjectRow';
+import { ProjectRowHeader } from './ProjectRowHeader';
 
 interface ProjectGridProps {
   isApproved?: boolean;
@@ -19,7 +20,7 @@ const ProjectGrid = ({ isApproved = true, xataData }: ProjectGridProps) => {
     // remove the project from the database
     removeProject(projectId);
 
-    // remove project frm the list
+    // remove project from the list
     const updatedProjects = orderedProjects.filter(
       (project) => project?.id !== projectId
     );
@@ -29,7 +30,6 @@ const ProjectGrid = ({ isApproved = true, xataData }: ProjectGridProps) => {
   };
 
   useEffect(() => {
-    console.log({ orderedProjects });
     fetch(`${process.env.url as string}/api/project/reorder`, {
       method: 'POST',
       body: JSON.stringify(orderedProjects),
@@ -39,21 +39,12 @@ const ProjectGrid = ({ isApproved = true, xataData }: ProjectGridProps) => {
   return (
     <div className="max-w-pageWidth mx-auto">
       {/* table header */}
-      {isApproved ? (
-        <div className="admin-gallery-table text-sm pb-3 border-bunker border-b-2 sticky pt-3 top-0 bg-black z-stickyTableHeader">
-          <div>Carousel?</div>
-          <div>Project</div>
-          <div>Contributor</div>
-          <div>Tags</div>
-          <div />
-        </div>
-      ) : (
+      {!isApproved && (
         <div className="admin-gallery-table bg-bunker py-2">
-          <div className="font-bold text-sm col-start-2 uppercase">
-            Unapproved
-          </div>
+          <div className="font-bold text-sm uppercase pl-4">Unapproved</div>
         </div>
       )}
+      <ProjectRowHeader />
 
       {/* table rows */}
       <div className="relative z-stickyTableContents">
